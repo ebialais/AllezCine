@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from './App.vue'
-import Accueil from './components/Accueil/Accueil.vue'
-import topFilms from './components/Films/topFilm.vue'
-import topSeries from './components/Series/topSeries.vue'
-import Infos from './components/Infos/Infos.vue'
+import Accueil from './views/Accueil/Accueil.vue'
+import topFilms from './views/Films/topFilm.vue'
+import topSeries from './views/Series/topSeries.vue'
+import Infos from './views/Infos/Infos.vue'
 
 Vue.use(Router)
 
