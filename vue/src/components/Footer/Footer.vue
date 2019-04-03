@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <h2>Le Logo</h2>
+        <div class="logo"><img alt="logo Allez Ciné" src="assets/logoAllezCine.svg"></div>
         <div id="liste">
             <div id="left">
                 <h3>FUNDAMENTALS</h3>
@@ -33,53 +33,37 @@
 
 <script>
     export default {
-        name: 'Pied',
+        name: 'footer',
     }
 </script>
 
 <style scoped>
     #footer {
-        margin: 0;
         background-color: black;
+        height: 350px;
         color: white;
-        padding: 30px 0;
-        font-size: 4vw;
-        font-family: 'Alegreya Sans', sans-serif;
-    }
-    h2 {
-        text-align: left;
-        margin-left: 20px;
+        width: 100vw;
+        padding: 50px;
     }
     #liste {
-        width: 80vw; 
-        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
     }
+    #left, #center, #rigth{
+        text-align: left;
+    }
+
     ul {
         padding: 0;
-        text-align: left;
     }
     li {
         list-style-type: none;
     }
-    @media only screen and (min-width: 400px) {
-        #footer {
-            font-size: 2vw;
-            height: 300px;
-        }
-        #liste {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-        }
+    img {
+        float: left;
+        width: 220px;
+        height: auto;
     }
-     @media only screen and (min-width: 800px) {
-        #footer {
-            font-size: 14px;
-            line-height : 25px;
-            height: 350px;
-            width: 100vw;
-        }
-    }
-
 
 </style>
