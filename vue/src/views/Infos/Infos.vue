@@ -1,19 +1,20 @@
 <template>
     <div id="info">
         <h2>Les infos</h2>
+        <formu :getData="getData" />
+        <Comments :getData="getData" />
     </div>
 </template>
 
 <script>
-    import formu from './components/Infos/formu.vue';
+    import formu from './formu.vue';
+    import Comments from './Comments.vue';
 
     export default {
         name: 'infos',
         components: {
             formu, 
-        },
-        beforeMount: function() {
-            this.getData()
+            Comments,
         },
         methods:{
             getData(){
