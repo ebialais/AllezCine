@@ -29,8 +29,9 @@
       req.open('GET','http://localhost:8888/Projet_allezcine/allezcine/php/getData.php', false);
       req.send(null);
       if (req.status === 200 ){
-          this.lists = JSON.parse(req.response)
-      } else {
+          this.lists = JSON.parse(req.response);
+      }else{
+          console.log('error', req.status);
       }
     },
   },
