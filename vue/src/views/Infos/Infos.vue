@@ -8,10 +8,7 @@
 
 <script>
     import formu from './formu.vue';
-<<<<<<< HEAD
-=======
     import Comments from './Comments.vue';
->>>>>>> c1e1d7ded575895ae4dcc8d53221f6ffc609553d
 
     export default {
         name: 'infos',

@@ -8,14 +8,13 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg885"
-   width="81.276207"
-   height="11.956788"
-   viewBox="0 0 81.276208 11.956788"
+   width="812.2063"
+   height="132.28856"
+   viewBox="0 0 812.20633 132.28856"
    sodipodi:docname="logoAllezCine.svg"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06">
   <metadata
@@ -40,16 +39,6 @@
          offset="0"
          id="stop4635" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4637"
-       id="linearGradient4791"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-1.8475084,0.46471141)"
-       x1="70.690292"
-       y1="1074.0338"
-       x2="108.19627"
-       y2="1074.0338" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -64,35 +53,39 @@
      inkscape:window-height="776"
      id="namedview887"
      showgrid="false"
-     inkscape:zoom="9.0577391"
-     inkscape:cx="41.920997"
-     inkscape:cy="4.2464659"
+     inkscape:zoom="1.6011972"
+     inkscape:cx="627.0091"
+     inkscape:cy="136.63121"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg885" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.75504875px;line-height:1.25;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#eb524a;fill-opacity:1;stroke:#eb524a;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     x="-0.063803561"
-     y="11.640877"
-     id="text4586"
-     transform="scale(1.0227814,0.97772604)"><tspan
-       sodipodi:role="line"
-       id="tspan4584"
-       x="-0.063803561"
+  <g
+     id="g4854"
+     transform="matrix(9.9906904,0,0,11.081575,0.1004059,-0.10574301)">
+    <text
+       transform="scale(1.0227814,0.97772604)"
+       id="text4586"
        y="11.640877"
-       style="stroke:#eb524a;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">ALLEZ</tspan></text>
-  <text
-     transform="scale(1.0227814,0.97772604)"
-     id="text4633"
-     y="11.911613"
-     x="41.478382"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.75504875px;line-height:1.25;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
-     xml:space="preserve"><tspan
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
-       y="11.911613"
+       x="-0.063803561"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.75504875px;line-height:1.25;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#eb524a;fill-opacity:1;stroke:#eb524a;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="stroke:#eb524a;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         y="11.640877"
+         x="-0.063803561"
+         id="tspan4584"
+         sodipodi:role="line">ALLEZ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.75504875px;line-height:1.25;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
        x="41.478382"
-       id="tspan4631"
-       sodipodi:role="line">CINE!</tspan></text>
+       y="11.911613"
+       id="text4633"
+       transform="scale(1.0227814,0.97772604)"><tspan
+         sodipodi:role="line"
+         id="tspan4631"
+         x="41.478382"
+         y="11.911613"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0">CINE!</tspan></text>
+  </g>
 </svg>
