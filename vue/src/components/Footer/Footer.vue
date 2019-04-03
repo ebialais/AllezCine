@@ -50,6 +50,10 @@
         justify-content: space-between;
         width: 90%;
     }
+    #left, #center, #rigth{
+        text-align: left;
+    }
+
     ul {
         padding: 0;
     }
