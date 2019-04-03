@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import formu from './components/Infos/formu.vue';
+    import formu from './formu.vue';
 
     export default {
         name: 'infos',
