@@ -1,19 +1,53 @@
 <template>
     <div id="header">
-        <h2>Le header</h2>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/topFilms">top Films</router-link>
-        <router-link to="/topSeries">top Series</router-link>
-        <router-link to="/Infos">Infos</router-link>
+        <div id="nav">
+            <div v-if="icon" >
+                <i class="fas fa-bars" @click="menuClick"></i>
+            </div>
+            <div v-else>
+                <i class="fas fa-times" @click="menuClick"></i>
+                <router-link to="/">Home</router-link> |
+                <router-link to="/topFilms">top Films</router-link>
+                <router-link to="/topSeries">top Series</router-link>
+                <router-link to="/Infos">Infos</router-link>
+            </div>
+        </div>
+        <div id="caroussel">
+
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'header',
+    name: 'Tete',
+    data () {
+        return {
+            icon : true,
+        }
+    },
+    methods: {
+        menuClick(){
+            this.icon = !this.icon
+        }
+    }
 }
 </script>
 
 <style scoped>
-
+    #header {
+        height: 200px;
+        background-color: red;
+        width: 100vw;
+    }
+    #nav {
+        background-color: #262626;
+        height: 50px;
+        width: 100vw;
+    }
+    .fa-times, .fa-bars {
+        color: white;
+        font-size : 25px;
+        float: right;
+    }
 </style>
