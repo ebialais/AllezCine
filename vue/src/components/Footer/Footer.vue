@@ -80,7 +80,6 @@
         #liste {
             display: flex;
             justify-content: space-between;
-            flex-direction: column;
             width: 90%;
         }
     }
@@ -90,6 +89,11 @@
             line-height : 25px;
             height: 350px;
             width: 100vw;
+        }
+        #liste {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
         }
         img {
         width: 200px;

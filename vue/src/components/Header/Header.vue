@@ -12,8 +12,7 @@
                 <router-link to="/Infos" class="link">Infos</router-link>
             </div>
         </div>
-        <div id="caroussel">
-        </div>
+        <carousel />
     </div>
 </template>
 
@@ -26,6 +25,9 @@ export default {
         return {
             icon : true,
         }
+    },
+    components: {
+        carousel,
     },
     methods: {
         menuClick(){
