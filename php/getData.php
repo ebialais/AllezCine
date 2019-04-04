@@ -2,14 +2,14 @@
     require './ddbConnect2.php';
     require './headerSettings.php';
 
-    $sql = "SELECT * FROM userRate";
-    $result = $pdo->query($sql);
-    $rows = array();
-
-    while($r = $result->fetch(PDO::FETCH_ASSOC)){
-        array_push($rows, $r);
+    if (isset($_GET['idFilm'])){
+        $req = $pdo -> prepare ('SELECT * FROM `userRate` WHERE idFilm=:idFilm');
+        $req -> execute ([':idFilm' => htmlspecialchars($_GET['idFilm'])]);
     }
-
-    print json_encode($rows);
+    $rows = array();
+     while($r = $req->fetch(PDO::FETCH_ASSOC)) {
+         array_push($rows, $r);
+    }
+   print json_encode($rows);
 
 ?>
