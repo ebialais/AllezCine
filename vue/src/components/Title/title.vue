@@ -17,7 +17,8 @@ export default {
         color: black;
         border-left: 3px solid red;
         padding: 0.1em 1.5em;
-        margin: 3px;
+        margin-top: 50px;
+        margin-left: 3px;
         font-size: 1.2em;
     }
 

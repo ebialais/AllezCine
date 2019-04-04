@@ -63,6 +63,7 @@ export default {
 
 <style scoped>
     #serieAccueil{
-        width: 100%;
+        width: 70%;
+        margin: auto;
     }
 </style>

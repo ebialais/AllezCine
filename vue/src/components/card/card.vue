@@ -26,9 +26,7 @@ export default {
         height: 480px;
     }
     img {
-        width: 100%;
-        height: auto;
-
+        width: 85%;
     }
     #cardText {
         font-family: 'Alegreya Sans', sans-serif;
@@ -40,7 +38,7 @@ export default {
         text-align: center;
         padding-top: 20px;
         padding-bottom: 10px;
-        height: 50px;
+        height: 40px;
     } 
     #cardYear {
         float: left;
@@ -50,15 +48,43 @@ export default {
     @media only screen and (min-width: 400px) {
         #card {
             float: left;
-            width: 24%;
-            margin: 3px;
+            width: 48%;
+            margin: 0.5vw;
+            height: 380px;
+        }
+        img {
+            width: 85%;
         }
     }
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 700px) {
+        #card {
+            float: left;
+            width: 24%;
+            margin: 0.5vw;
+            height: 380px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 900px) {
         #card {
             float: left;
             width: 16%;
-            margin: 3px;
+            margin: 0.5vw;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 1500px) {
+        #card {
+            float: left;
+            width: 15%;
+            margin: 0.5vw;
+        }
+        img {
+            width: 100%;
         }
     }
 </style>
