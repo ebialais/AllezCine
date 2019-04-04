@@ -63,6 +63,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70vw;
 }
 .carousel {
   display: flex;
@@ -70,8 +71,8 @@ export default {
   align-items: center;
   overflow: hidden;
   
-  width: 24em;
-  min-height: 25em;
+  /* width: 24em;
+  min-height: 25em; */
 }
 .slide {
   flex: 0 0 20em;

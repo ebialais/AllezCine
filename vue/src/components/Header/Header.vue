@@ -12,7 +12,7 @@
                 <router-link to="/Infos" class="link">Infos</router-link>
             </div>
         </div>
-        <carousel />
+        <!-- <carousel /> -->
     </div>
 </template>
 
@@ -42,26 +42,24 @@ export default {
         height: 200px;
         background-color: red;
         width: 100vw;
+        margin: 0;
     }
     #nav {
         background-color: #262626;
         height: 50px;
-        width: 100vw;
+        width: 100%;
+        margin: 0;
     }
     .fa-times, .fa-bars {
         color: white;
         font-size : 25px;
         float: right;
-        margin: 5px;
+        padding: 5px;
     }
     .link {
         color: white;
         text-decoration: none;
         padding: 5px;
         border: 2px solid white;
-    }
-    img{
-        width:80em;
-        height: auto;
     }
 </style>

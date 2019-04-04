@@ -1,14 +1,14 @@
 <template>
-    <div>
+    <div id="filmAccueil">
         <section v-if="errored">
             <p>Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement.</p>
         </section>
 
         <section v-else>
             <mainTitle :mainTitle="'Films'" />
-            <div v-for="(film, index) in films" :key="index">
+                <div v-for="(film, index) in films" :key="index">
                 <div v-if="index < 12">
-                    <card :title="film.title" :year="film.release_date" :source="getImage(film.poster_path)" /> 
+                    <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
                 </div>
                 <div v-else></div>
             </div>
@@ -19,6 +19,7 @@
 <script>
 import { axios } from './../../Plugins/Axios'
 import { getImage } from '../../utils/getImage'
+import { getYear } from '../../utils/getYear'
 import card from '../../components/card/card'
 import mainTitle from '../../components/Title/title'
 
@@ -52,10 +53,14 @@ export default {
     },
     methods : {
         getImage,
+        getYear,
     }
 }
 </script>
 
-<style>
-
+<style scoped>
+    #filmAccueil{
+        width: 100%;
+        margin: auto;
+    }
 </style>

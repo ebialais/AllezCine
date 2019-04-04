@@ -1,6 +1,5 @@
 <template>
     <div id="Accueil">
-        <h2>Accueil</h2>
         <filmAccueil />
         <serieAccueil />
     </div>
@@ -21,5 +20,13 @@
 </script>
 
 <style scoped>
-
+    #Accueil {
+        width: 100vw;
+        margin:0;
+        overflow-x:hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+    }
 </style>
