@@ -33,7 +33,6 @@ export default {
             page: 1,
             loading: true,
             errored: false,
-            id: this.$route.params.id
         }
     },
     components: {
