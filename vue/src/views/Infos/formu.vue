@@ -23,7 +23,7 @@ export default {
             const req = new XMLHttpRequest();
             let query = `userCom=${title}` 
             // console.log(query)
-            req.open('POST',`http://localhost:8888/Projet_allezcine/allezcine/php/getData.php?${query}`, false);
+            req.open('POST',`http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php?${query}`, false);
             req.send();
             if (req.status === 200 ){
                 // console.log(req.response)

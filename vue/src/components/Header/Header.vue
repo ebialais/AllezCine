@@ -6,10 +6,10 @@
             </div>
             <div v-else>
                 <i class="fas fa-times" @click="menuClick"></i>
-                <router-link to="/">Home</router-link> |
-                <router-link to="/topFilms">top Films</router-link>
-                <router-link to="/topSeries">top Series</router-link>
-                <router-link to="/Infos">Infos</router-link>
+                <router-link to="/" class="link">Home</router-link>
+                <router-link to="/topFilms" class="link">top Films</router-link>
+                <router-link to="/topSeries" class="link">top Series</router-link>
+                <router-link to="/Infos" class="link">Infos</router-link>
             </div>
         </div>
         <div id="caroussel">
@@ -50,6 +50,13 @@ export default {
         color: white;
         font-size : 25px;
         float: right;
+        margin: 5px;
+    }
+    .link {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+        border: 2px solid white;
     }
     img{
         width:80em;
