@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import carousel from './carousel.vue'
+import carousel from './../carousel/carousel'
 
 export default {
     name: 'Tete',
