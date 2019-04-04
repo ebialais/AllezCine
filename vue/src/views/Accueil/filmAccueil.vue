@@ -3,12 +3,13 @@
         <section v-if="errored">
             <p>Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement.</p>
         </section>
-
         <section v-else>
             <mainTitle :mainTitle="'Films'" />
                 <div v-for="(film, index) in films" :key="index">
                 <div v-if="index < 12">
-                    <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
+                    <router-link :to="{ name: 'Infos', params: { id: film.id } }" class="link">
+                        <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
+                    </router-link>                
                 </div>
                 <div v-else></div>
             </div>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+import router from '../../router.js'
 import { axios } from './../../Plugins/Axios'
 import { getImage } from '../../utils/getImage'
 import { getYear } from '../../utils/getYear'
@@ -31,6 +33,7 @@ export default {
             page: 1,
             loading: true,
             errored: false,
+            id: this.$route.params.id
         }
     },
     components: {
