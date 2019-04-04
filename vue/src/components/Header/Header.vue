@@ -9,7 +9,6 @@
                 <router-link to="/" class="link">Home</router-link>
                 <router-link to="/topFilms" class="link">top Films</router-link>
                 <router-link to="/topSeries" class="link">top Series</router-link>
-                <router-link to="/Infos" class="link">Infos</router-link>
             </div>
         </div>
         <!-- <carousel /> -->

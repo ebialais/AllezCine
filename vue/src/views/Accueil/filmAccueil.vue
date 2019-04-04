@@ -7,7 +7,7 @@
             <mainTitle :mainTitle="'Films'" />
                 <div v-for="(film, index) in films" :key="index">
                 <div v-if="index < 12">
-                    <router-link :to="{ name: 'Infos', params: { id: film.id } }" class="link">
+                    <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
                         <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
                     </router-link>                
                 </div>
