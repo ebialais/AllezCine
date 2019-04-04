@@ -13,12 +13,13 @@
             </div>
         </div>
         <div id="caroussel">
-
         </div>
     </div>
 </template>
 
 <script>
+import carousel from './carousel.vue'
+
 export default {
     name: 'Tete',
     data () {
@@ -56,5 +57,9 @@ export default {
         text-decoration: none;
         padding: 5px;
         border: 2px solid white;
+    }
+    img{
+        width:80em;
+        height: auto;
     }
 </style>
