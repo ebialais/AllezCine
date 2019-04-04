@@ -28,7 +28,6 @@ export default {
             req.open('POST',`http://10.20.0.163:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=1&${query}`, false);
             req.send();
             if (req.status === 200 ){
-                // console.log(req.response)
                 this.getData()
             } else {
                 console.log('error', req.statusText)

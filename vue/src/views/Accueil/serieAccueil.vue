@@ -10,10 +10,7 @@
                 <div v-if="index < 12">
                     <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
                 </div>
-            </div>
-    
-            
-
+            </div> 
         </section>
     </div>
 </template>
