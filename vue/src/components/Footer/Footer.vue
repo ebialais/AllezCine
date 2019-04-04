@@ -39,13 +39,8 @@
 
 <style scoped>
     #footer {
-<<<<<<< HEAD
-        margin: 0;
-        background-color: #262626;
-=======
         background-color: black;
         height: 350px;
->>>>>>> 319f5fdaa8989e2c1250ddb20c6afdc7b1f243cd
         color: white;
         width: 100vw;
         padding: 50px;
