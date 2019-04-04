@@ -8,7 +8,7 @@
             <mainTitle :mainTitle="'Series TV'" />
             <div v-for="(tv, index) in tvs" :key="index">
                 <div v-if="index < 12">
-                    <card :title="tv.name" :year="tv.first_air_date" :source="getImage(tv.poster_path)" /> 
+                    <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
                 </div>
             </div>
     
@@ -21,6 +21,7 @@
 <script>
 import { axios } from './../../Plugins/Axios.js'
 import { getImage } from '../../utils/getImage'
+import { getYear } from '../../utils/getYear'
 import card from '../../components/card/card'
 import mainTitle from '../../components/Title/title'
 
@@ -55,6 +56,7 @@ export default {
     },
     methods : {
         getImage,
+        getYear,
     }
 }
 </script>
