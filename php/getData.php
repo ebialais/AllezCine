@@ -1,6 +1,6 @@
 <?php
-    require './ddbConnect2.php';
-    require './headerSettings.php';
+    require './bddConnect.php';
+    require './headerSetting.php';
 
     if (isset($_GET['idFilm'])){
         $req = $pdo -> prepare ('SELECT * FROM `userRate` WHERE idFilm=:idFilm');

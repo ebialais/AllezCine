@@ -1,6 +1,8 @@
 <template>
     <div class="formu" @submit="handleSubmit">
         <form>
+            <p>Title: </p>
+            <input name="titleCom" type="text">
             <p>Comments : </p>
             <input name="userCom" type="text">
             <br>
@@ -15,21 +17,21 @@ export default {
     methods: {
         handleSubmit(e){
             e.preventDefault() 
+            let titleCom = e.target.titleCom.value;
             let userCom = e.target.userCom.value;
-            // console.log(userCom);
-            this.sendData(userCom); 
+            this.sendData(titleCom, userCom); 
         },
-        sendData(title){ 
+        sendData(titre, description){ 
             const req = new XMLHttpRequest();
-            let query = `userCom=${title}` 
-            // console.log(query)
-            req.open('POST',`http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php?${query}`, false);
+            let query = `titleCom=${titre}&userCom=${description}`;
+            console.log(query)
+            req.open('POST',`http://10.20.0.163:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=1&${query}`, false);
             req.send();
             if (req.status === 200 ){
                 // console.log(req.response)
                 this.getData()
             } else {
-                // console.log('error', req.status, req.statusText)
+                console.log('error', req.statusText)
             }
         }
     },
