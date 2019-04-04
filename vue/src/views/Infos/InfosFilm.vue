@@ -1,9 +1,13 @@
 <template>
     <div id="info">
-        <h2>Les infos</h2>
-        <div>{{ id }}</div>
-        <div>{{ infos.title }}</div>
-        <!-- <card :title="infos.title" :year="getYear(infos.release_date)" :source="getImage(infos.poster_path)" />  -->
+        <div id="poster">
+            <mainTitle :mainTitle="infos.original_title" />
+            <img :src="getImage(infos.backdrop_path)" />
+            <p>{{ infos.overview }}</p>
+            <div v-for="(genre, index) in infos.genres" :key="index">
+                {{ genre.name }}
+            </div>
+        </div>
         <formu :getData="getData" />
         <Comments :getData="getData" />
     </div>
@@ -12,6 +16,7 @@
 <script>
     import { axios } from './../../Plugins/Axios'
     import card from '../../components/card/card'
+    import mainTitle from '../../components/Title/title'
     import { getImage } from '../../utils/getImage'
     import { getYear } from '../../utils/getYear'
     import formu from './formu.vue';
@@ -21,6 +26,8 @@
     export default {
         name: 'InfosFilm',
         components: {
+            mainTitle,
+            card,
             formu, 
             Comments,
         },
@@ -69,5 +76,8 @@
 </script>
 
 <style scoped>
-
+    #info {
+        width: 80%;
+        margin: auto;
+    }
 </style>
