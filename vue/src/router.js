@@ -27,7 +27,7 @@ export default new Router({
       component: topSeries
     },
     {
-      path: '/Infos',
+      path: '/Infos/:id',
       name: 'Infos',
       component: Infos
     },
