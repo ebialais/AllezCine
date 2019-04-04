@@ -8,7 +8,7 @@
             <mainTitle :mainTitle="'Films'" />
                 <div v-for="(film, index) in films" :key="index">
                 <div v-if="index < 12">
-                    <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
+                    <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" @click="goInfo(film.id)"/> 
                 </div>
                 <div v-else></div>
             </div>
@@ -54,6 +54,10 @@ export default {
     methods : {
         getImage,
         getYear,
+        goInfo(id){
+            
+
+        }
     }
 }
 </script>
