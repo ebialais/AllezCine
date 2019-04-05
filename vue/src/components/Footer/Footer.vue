@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <div class="logo"><img alt="logo Allez Ciné" src="assets/logoAllezCine.svg"></div>
+        <div class="logo"><img alt="logo Allez Ciné" src="assets/logoAllezCine.png"></div>
         <div id="liste">
             <div id="left">
                 <h3>FUNDAMENTALS</h3>
