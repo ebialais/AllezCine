@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Tete />
+    <social />
     <router-view/>
     <Pied />
   </div>
@@ -8,11 +9,13 @@
 
 <script>
   import Tete from './components/Header/Header.vue';
+  import social from '.components/socialmedia/social.vue';
   import Pied  from './components/Footer/Footer.vue';
   
   export default {
     components: {
-      Tete, 
+      Tete,
+      social, 
       Pied,
     },
   }
