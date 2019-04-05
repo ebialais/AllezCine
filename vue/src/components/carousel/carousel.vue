@@ -51,7 +51,6 @@
   }
 </script>
 
-<<<<<<< HEAD
 <style scoped>
   .carousel {
     position: relative;
@@ -71,39 +70,5 @@
   right: 10px;
   left: auto;
   background: url(next.png);
-=======
-<style>
-.carousel-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70vw;
-}
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  
-  /* width: 24em;
-  min-height: 25em; */
-}
-.slide {
-  flex: 0 0 20em;
-  height: 20em;
-  margin: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 0.1em dashed #000;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
-}
-.slide:first-of-type {
-  opacity: 0;
-}
-.slide:last-of-type {
-  opacity: 0;
->>>>>>> 2f8006c8cbed4bd4e763e93c8a0fc4b9dedeefb0
 }
 </style>

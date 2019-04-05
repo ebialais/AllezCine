@@ -23,7 +23,7 @@ export default {
         align-items: center;
         width: 80vw;
         margin: 20px auto;
-        height: 480px;
+        height: 500px;
     }
     img {
         width: 85%;
@@ -50,11 +50,14 @@ export default {
             float: left;
             width: 48%;
             margin: 0.5vw;
-            height: 380px;
+            height: 411px;
         }
         img {
             width: 85%;
         }
+        #cardTitle {
+            height: 46px;
+        } 
     }
     @media only screen and (min-width: 700px) {
         #card {
@@ -72,6 +75,7 @@ export default {
             float: left;
             width: 23%;
             margin: 0.5vw;
+            height: 490px;
         }
         img {
             width: 100%;
@@ -82,9 +86,16 @@ export default {
             float: left;
             width: 15%;
             margin: 0.5vw;
+            height: 490px;
         }
         img {
             width: 100%;
+        }
+    }
+    @media only screen and (min-width: 3000px) {
+        #card {
+            height: 720px;
+            font-size: 2em;
         }
     }
 </style>
