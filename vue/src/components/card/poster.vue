@@ -3,12 +3,21 @@
         <img :src="source" class="infoImg"/>
         <div class="infoTitle">{{ infoTitle }} ({{ year }}) </div>
         <div class="infoRate"> 
-            {{ rate }}
-            <i id="star1" class="fas fa-star"></i>
-            <i id="star2" class="fas fa-star"></i>
-            <i id="star3" class="fas fa-star"></i>
-            <i id="star4" class="fas fa-star"></i>
-            <i id="star5" class="fas fa-star"></i>
+            <span @mouseover="displayRate">
+                <i class="fas fa-star active" v-if="(Math.round(rate) > 0)"></i>
+                <i class="fas fa-star inactive" v-else></i>
+                <i class="fas fa-star active" v-if="(Math.round(rate) >= 4)"></i>
+                <i class="fas fa-star inactive" v-else></i>
+                <i class="fas fa-star active" v-if="(Math.round(rate) >= 6)"></i>
+                <i class="fas fa-star inactive" v-else></i>
+                <i class="fas fa-star active" v-if="(Math.round(rate) >= 8)"></i>
+                <i class="fas fa-star inactive" v-else></i>
+                <i class="fas fa-star active" v-if="(Math.round(rate) >= 10)"></i>
+                <i class="fas fa-star inactive" v-else></i>
+            </span>
+            <span id="rate" v-if="rateDisplay">
+                {{ rate }}
+            </span>
         </div>
         <h4 class="infoTitre Synopsis">Synopsis</h4>
         <p class="infoSynopsis">{{ synopsis }}</p>
@@ -19,10 +28,20 @@
 </template>
 
 <script>
-export default {
-    name: "poster",
-    props:["infoTitle", "year", "source", "rate", "genres", "synopsis"],
-}
+    export default {
+        name: "poster",
+        props:["infoTitle", "year", "source", "rate", "genres", "synopsis"],
+        data (){
+            return {
+                rateDisplay: false
+            }
+        },
+        methods: {
+            displayRate (){
+                this.rateDisplay = !this.rateDisplay
+            }
+        }
+    }
 </script>
 
 <style>
@@ -51,6 +70,17 @@ export default {
         margin: 5px;
         border-radius: 4px;
         
+    }
+    .inactive  {
+        color: #919090;
+    }
+    .active  {
+        color: #ffb935;
+    }
+    #rate {
+        background-color: #ffb935;
+        padding: 3px;
+        border-radius: 3px;
     }
 
     @media only screen and (min-width: 700px) {

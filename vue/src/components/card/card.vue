@@ -75,21 +75,26 @@ export default {
             float: left;
             width: 23%;
             margin: 0.5vw;
-            height: 490px;
+            height: 400px;
         }
         img {
             width: 100%;
         }
     }
-    @media only screen and (min-width: 1500px) {
+    @media only screen and (min-width: 1200px) {
         #card {
             float: left;
             width: 15%;
             margin: 0.5vw;
-            height: 490px;
+            height: 340px;
         }
         img {
             width: 100%;
+        }
+    }
+    @media only screen and (min-width: 2000px) {
+        #card {
+            height: 520px;
         }
     }
     @media only screen and (min-width: 3000px) {
