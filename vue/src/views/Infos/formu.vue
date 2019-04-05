@@ -12,8 +12,22 @@
 </template>
 
 <script>
-export default {
+    
+import { getComment } from '../../api/functionComments.js'
+
+export default {    
     name:"formu",
+
+    data(){
+        return{
+            comments: null,
+        }
+    },
+
+    mounted(){
+        this.comments = getComment(this.$router.params.id);
+    },
+
     methods: {
         handleSubmit(e){
             e.preventDefault() 
@@ -21,18 +35,18 @@ export default {
             let userCom = e.target.userCom.value;
             this.sendData(titleCom, userCom); 
         },
-        sendData(titre, description){ 
+        sendData(titre, description){
             const req = new XMLHttpRequest();
             let query = `titleCom=${titre}&userCom=${description}`;
             console.log(query)
-            req.open('POST',`http://10.20.0.163:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=1&${query}`, false);
+            req.open('POST',`http://10.20.0.91:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=1&${query}`, false);
             req.send();
             if (req.status === 200 ){
                 this.getData()
             } else {
                 console.log('error', req.statusText)
             }
-        }
+        },
     },
     props:[
         "getData",

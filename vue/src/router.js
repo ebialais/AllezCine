@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Accueil from './views/Accueil/Accueil.vue'
 import topFilms from './views/Films/topFilm.vue'
 import topSeries from './views/Series/topSeries.vue'
-import Infos from './views/Infos/Infos.vue'
+import InfosFilm from './views/Infos/InfosFilm.vue'
+import InfosTv from './views/Infos/InfosTv.vue'
 
 Vue.use(Router)
 
@@ -27,9 +28,14 @@ export default new Router({
       component: topSeries
     },
     {
-      path: '/Infos/:id',
-      name: 'Infos',
-      component: Infos
+      path: '/InfosFilm/:id',
+      name: 'InfosFilm',
+      component: InfosFilm
+    },
+    {
+      path: '/InfosTv/:id',
+      name: 'InfosTv',
+      component: InfosTv
     },
     
   ]
