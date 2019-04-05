@@ -3,9 +3,12 @@
     <slot></slot>
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
+    <div class="carousel__pagination">
+      <button v-for="n in slidesCount" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
+    </div>
   </div>
 </template>
-
+ 
 <script>
   export default {
 
@@ -13,7 +16,7 @@
       return {
         index : 0,
         slides: [],
-        direction: 'right'
+        direction: null
       }
     },
 
@@ -44,6 +47,10 @@
           this.index = this.slidesCount - 1
 
         }
+      },
+      goto(index) {
+        this.direction = index > this.index ? 'right' : 'left'
+        this.index = index
       }
 
     }
@@ -51,59 +58,49 @@
   }
 </script>
 
-<<<<<<< HEAD
 <style scoped>
-  .carousel {
+  /* .carousel {
     position: relative;
-  }
-
+    overflow: hidden;
+    height: 400px;
+  } */
+  
   .carousel__nav {
     position: absolute;
     top: 50%;
-    left: 10%;
+    /* left: 10%; */
     margin-top: -31px;
     background: url(prev.png);
-    width: 100px;
-    height: 100px;
+    width: 55px;
+    height: 77px;
   }
 
 .carousel__nav.carousel__next {
   right: 10px;
   left: auto;
   background: url(next.png);
-=======
-<style>
-.carousel-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70vw;
 }
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  
-  /* width: 24em;
-  min-height: 25em; */
+
+.carousel__pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
-.slide {
-  flex: 0 0 20em;
-  height: 20em;
-  margin: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 0.1em dashed #000;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
+
+.carousel__pagination button {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  opacity: 0.8;
+  border-radius: 10px;
+  margin: 0 2px;
+
 }
-.slide:first-of-type {
-  opacity: 0;
-}
-.slide:last-of-type {
-  opacity: 0;
->>>>>>> 2f8006c8cbed4bd4e763e93c8a0fc4b9dedeefb0
-}
+.carousel__pagination button.active {
+  background-color: #fff;
+} 
+
 </style>

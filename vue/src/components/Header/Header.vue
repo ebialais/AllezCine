@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
     #header {
-        height: 200px;
+        /* height: 200px; */
         background-color: red;
         width: 100vw;
         margin: 0;
@@ -75,4 +75,10 @@ export default {
         padding: 5px;
         border: 2px solid white;
     }
+    .carousel {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+  }
+  
 </style>

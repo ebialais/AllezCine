@@ -1,7 +1,7 @@
 <template>
   <transition :name="transition">
     <div v-show = "visible">
-        Index: {{ slide }}
+      
           <slot>
               
           </slot>
@@ -19,6 +19,11 @@ export default {
     }
   },
   computed: {
+    transition () {
+      if(this.$parent.direction) {
+        return 'slide-' + this.$parent.direction
+      }
+    },
     visible () {
       return this.index === this.$parent.index
     }
