@@ -41,7 +41,7 @@
         },
         mounted () {
             axios
-            .get(`https://api.themoviedb.org/3/tv/${this.id}?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&`)
+            .get(`https://api.themoviedb.org/3/tv/${this.idFilm}?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&`)
             .then(response => {
                 console.log(response)
                 this.infos = response.data ? response.data : [] 
