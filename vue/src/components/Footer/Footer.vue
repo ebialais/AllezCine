@@ -33,37 +33,71 @@
 
 <script>
     export default {
-        name: 'footer',
+        name: 'pied',
     }
 </script>
 
 <style scoped>
     #footer {
+        margin: 0;
         background-color: black;
         height: 350px;
         color: white;
         width: 100vw;
-        padding: 50px;
+        padding: 30px 0;
+        font-size: 4vw;
+        font-family: 'Alegreya Sans', sans-serif;
+    }
+    h3 {
+        text-align: left;
+        margin-left: 20px;
+        margin-top: 20px;
     }
     #liste {
-        display: flex;
-        justify-content: space-between;
         width: 90%;
+        width: 80vw; 
     }
-    #left, #center, #rigth{
-        text-align: left;
-    }
-
     ul {
         padding: 0;
+        text-align: left;
+        margin: 20px;
     }
     li {
         list-style-type: none;
+        
     }
     img {
         float: left;
-        width: 220px;
+        width: 150px;
         height: auto;
+        margin: 0 20px 20px 20px;
+    }
+    @media only screen and (min-width: 400px) {
+        #footer {
+            font-size: 2vw;
+            height: 300px;
+        }
+        #liste {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+        }
+    }
+    @media only screen and (min-width: 800px) {
+        #footer {
+            font-size: 14px;
+            line-height : 25px;
+            height: 350px;
+            width: 100vw;
+        }
+        #liste {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+        }
+        img {
+        width: 200px;
+    }
     }
 
 </style>
