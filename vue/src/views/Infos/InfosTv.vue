@@ -29,7 +29,7 @@
         },
         data () {
             return {
-                id: 0,
+                idFilm: 0,
                 infos: null,
                 loading: true,
                 errored: false,
@@ -37,7 +37,7 @@
             }
         },
         created() {
-            this.id = this.$route.params.id
+            this.idFilm = this.$route.params.id
         },
         mounted () {
             axios

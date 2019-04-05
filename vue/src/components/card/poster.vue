@@ -2,7 +2,14 @@
     <div id="poster">
         <img :src="source" class="infoImg"/>
         <div class="infoTitle">{{ infoTitle }} ({{ year }}) </div>
-        <div class="infoRate"> {{ rate }}</div>
+        <div class="infoRate"> 
+            {{ rate }}
+            <i id="star1" class="fas fa-star"></i>
+            <i id="star2" class="fas fa-star"></i>
+            <i id="star3" class="fas fa-star"></i>
+            <i id="star4" class="fas fa-star"></i>
+            <i id="star5" class="fas fa-star"></i>
+        </div>
         <h4 class="infoTitre Synopsis">Synopsis</h4>
         <p class="infoSynopsis">{{ synopsis }}</p>
         <span v-for="(genre, index) in genres" :key="index" class="infoGenre">
