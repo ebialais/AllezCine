@@ -1,63 +1,77 @@
 <template>
-  <div class='carousel-view'>
-    <transition-group
-      class='carousel'
-      tag="div">
-      <div
-        v-for="slide in slides" 
-        class='slide'
-        :key="slide.id">
-        <h4> {{ slide.title }} </h4>
-      </div>
-    </transition-group>
-    <div class='carousel-controls'>
-      <button class='carousel-controls__button' @click="previous">prev</button>
-      <button class='carousel-controls__button' @click="next">next</button>
-    </div>
+  <div class="carousel">
+    <slot></slot>
+    <button class="carousel__nav carousel__next" @click.prevent="next"></button>
+    <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
   </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      slides: [
-        {
-          title: 'I am Slide A',
-          id: 1
-        },
-        {
-          title: 'I am Slide B',
-          id: 2
-        },
-        {
-          title: 'I am Slide C',
-          id: 3
-        },
-        {
-          title: 'I am Slide D',
-          id: 4
-        },
-        {
-          title: 'I am Slide E',
-          id: 5
-        }
-      ]
-    }
-  },
-  methods: {
-    next () {
-      const first = this.slides.shift()
-      this.slides = this.slides.concat(first)
+  export default {
+
+    data() {
+      return {
+        index : 0,
+        slides: [],
+        direction: 'right'
+      }
     },
-    previous () {
-      const last = this.slides.pop()
-      this.slides = [last].concat(this.slides)
+
+    mounted() {
+      this.slides = this.$children,
+      this.slides.forEach((slide, i)=> {
+        slide.index = i
+      })
+    },
+
+    computed : {
+      slidesCount () { return this.slides.length }
+
+      },
+
+    methods : {
+      next () {
+        this.index++
+        this.direction = 'right'
+        if (this.index > this.slidesCount) {
+          this.index = 0
+        }
+      },
+      prev () {
+        this.index--
+        this.direction = 'left'
+        if (this.index <= 0) {
+          this.index = this.slidesCount - 1
+
+        }
+      }
+
     }
+
   }
-}
 </script>
 
+<<<<<<< HEAD
+<style scoped>
+  .carousel {
+    position: relative;
+  }
+
+  .carousel__nav {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -31px;
+    background: url(prev.png);
+    width: 100px;
+    height: 100px;
+  }
+
+.carousel__nav.carousel__next {
+  right: 10px;
+  left: auto;
+  background: url(next.png);
+=======
 <style>
 .carousel-view {
   display: flex;
@@ -90,5 +104,6 @@ export default {
 }
 .slide:last-of-type {
   opacity: 0;
+>>>>>>> 2f8006c8cbed4bd4e763e93c8a0fc4b9dedeefb0
 }
 </style>
