@@ -5,7 +5,7 @@
         </section>
         <section v-else>
             <mainTitle :mainTitle="'Films'" />
-                <div v-for="(film, index) in films" :key="index">
+                <div v-for="(film, index) in films" :key="index" :film='film'>
                 <div v-if="index < 12">
                     <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
                         <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
@@ -33,8 +33,15 @@ export default {
             page: 1,
             loading: true,
             errored: false,
+            result: null, 
+            // type: (this.film.title ? 'movie' : 'tv'), 
         }
     },
+    // props: {
+    //     film: {
+    //         type: Object
+    //     },
+    // },
     components: {
         mainTitle,
         card,

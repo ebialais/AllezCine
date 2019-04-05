@@ -1,42 +1,72 @@
 <template>
+    
     <div class="formu" @submit="handleSubmit">
-        <form>
-            <p>Comments : </p>
-            <input name="userCom" type="text">
-            <br>
-            <input type="submit" name="submit" value="Submit">
-        </form>
+        <div v-if="idFilm">
+            <form>
+                <p>Title: </p>
+                <input name="titleCom" type="text">
+                <p>Comments : </p>
+                <input name="userCom" type="text">
+                <br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+        <div v-else>Loading...</div>
     </div>
+    
 </template>
 
 <script>
-export default {
+    
+// import { getComment } from '../../api/functionComments.js'
+
+export default {    
     name:"formu",
+
+    data(){
+        return{
+            comments: null,
+            idFilm: null,
+        }
+    },
+
+    created() {
+        this.idFilm = this.$route.params.id
+    },
+
+    // mounted(){
+    //     this.comments = getComment(this.$router.params.id);
+    // },
+
     methods: {
         handleSubmit(e){
             e.preventDefault() 
+            let titleCom = e.target.titleCom.value;
             let userCom = e.target.userCom.value;
-            // console.log(userCom);
-            this.sendData(userCom); 
+            this.sendData(titleCom, userCom, this.idFilm); 
         },
-        sendData(title){ 
+        sendData(titre, description, idFilm){
             const req = new XMLHttpRequest();
-            let query = `userCom=${title}` 
-            // console.log(query)
-            req.open('POST',`http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php?${query}`, false);
-            req.send();
+            let query = `titleCom=${titre}&userCom=${description}&idFilm=${idFilm}`;
+            console.log(query)
+            req.open('GET',`http://10.20.0.91:8888/Projet_allezcine/allezcine/php/insertData.php?${query}`, false);
+            req.send(null);
             if (req.status === 200 ){
-                // console.log(req.response)
-                this.getData()
+                this.insertData()
             } else {
-                // console.log('error', req.status, req.statusText)
+                console.log('error', req.statusText)
             }
         }
     },
     props:[
         "getData",
+        "insertData",
     ]
 }
 </script>
 <style>
+    .formu {
+        clear: left;
+        padding-top: 50px; /* pour que ce ne soit pas trop coller à l'image */
+    }
 </style>

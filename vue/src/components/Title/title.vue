@@ -21,5 +21,10 @@ export default {
         margin-left: 3px;
         font-size: 1.2em;
     }
+    @media only screen and (min-width: 3000px) {
+        #title {
+            font-size: 2em;
+        }
+    }
 
 </style>
