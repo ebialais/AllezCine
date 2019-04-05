@@ -54,4 +54,8 @@ export default {
 }
 </script>
 <style>
+    .formu {
+        clear: left;
+        padding-top: 50px; /* pour que ce ne soit pas trop coller à l'image */
+    }
 </style>

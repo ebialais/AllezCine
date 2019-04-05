@@ -24,6 +24,7 @@
     margin: 0;
     width: 100vw;
     overflow-x: none;
+    background-color: #f9f9f9;
   }
   #app {
     margin: 0;

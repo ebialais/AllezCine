@@ -15,5 +15,7 @@
 </script>
 
 <style>
-
+    #comments {
+        clear: left;
+    }
 </style>
