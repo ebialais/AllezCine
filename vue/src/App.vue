@@ -22,13 +22,12 @@
 <style>
   body {
     margin: 0;
+    width: 100vw;
+    overflow-x: none;
   }
   #app {
     margin: 0;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+    width: 100vw;
+    overflow-x: none;
   }
 </style>
