@@ -1,7 +1,7 @@
 <template>
     <div id="filmAccueil">
         <section v-if="errored">
-            <p>Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement.</p>
+            <Error />
         </section>
         <section v-else>
             <mainTitle :mainTitle="'Films'" />
@@ -24,6 +24,7 @@ import { getImage } from '../../utils/getImage'
 import { getYear } from '../../utils/getYear'
 import card from '../../components/card/card'
 import mainTitle from '../../components/Title/title'
+import Error from '../../components/Error/Error'
 
 export default {
     name: "filmAccueil",
@@ -45,6 +46,7 @@ export default {
     components: {
         mainTitle,
         card,
+        Error,
     },
     mounted () {
         axios

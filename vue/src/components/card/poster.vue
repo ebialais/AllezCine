@@ -1,23 +1,25 @@
 <template>
     <div id="poster">
         <img :src="source" class="infoImg"/>
-        <div class="infoTitle">{{ infoTitle }} ({{ year }}) </div>
-        <div class="infoRate"> 
-            <span @mouseover="displayRate">
-                <i class="fas fa-star active" v-if="(Math.round(rate) > 0)"></i>
-                <i class="fas fa-star inactive" v-else></i>
-                <i class="fas fa-star active" v-if="(Math.round(rate) >= 4)"></i>
-                <i class="fas fa-star inactive" v-else></i>
-                <i class="fas fa-star active" v-if="(Math.round(rate) >= 6)"></i>
-                <i class="fas fa-star inactive" v-else></i>
-                <i class="fas fa-star active" v-if="(Math.round(rate) >= 8)"></i>
-                <i class="fas fa-star inactive" v-else></i>
-                <i class="fas fa-star active" v-if="(Math.round(rate) >= 10)"></i>
-                <i class="fas fa-star inactive" v-else></i>
-            </span>
-            <span id="rate" v-if="rateDisplay">
-                {{ rate }}
-            </span>
+        <div id="InfoHeader">
+            <div class="infoTitle">{{ infoTitle }} ({{ year }}) </div>
+            <div class="infoRate"> 
+                <span id="rate" v-if="rateDisplay">
+                    {{ rate }}
+                </span>
+                <span @mouseover="displayRate">
+                    <i class="fas fa-star active" v-if="(Math.round(rate) > 0)"></i>
+                    <i class="fas fa-star inactive" v-else></i>
+                    <i class="fas fa-star active" v-if="(Math.round(rate) >= 4)"></i>
+                    <i class="fas fa-star inactive" v-else></i>
+                    <i class="fas fa-star active" v-if="(Math.round(rate) >= 6)"></i>
+                    <i class="fas fa-star inactive" v-else></i>
+                    <i class="fas fa-star active" v-if="(Math.round(rate) >= 8)"></i>
+                    <i class="fas fa-star inactive" v-else></i>
+                    <i class="fas fa-star active" v-if="(Math.round(rate) >= 10)"></i>
+                    <i class="fas fa-star inactive" v-else></i>
+                </span>
+            </div>
         </div>
         <h4 class="infoTitre Synopsis">Synopsis</h4>
         <p class="infoSynopsis">{{ synopsis }}</p>
@@ -54,8 +56,13 @@
         width: 100%;
         margin: 20px auto;
     }
+    #InfoHeader {
+        display: flex;
+        justify-content: space-between;
+    }
     .infoTitle {
         text-transform: uppercase;
+        font-size: 2em;
         font-weight: bold;
     }
     .infoSynopsis {
