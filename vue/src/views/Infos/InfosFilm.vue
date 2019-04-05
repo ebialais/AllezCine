@@ -19,7 +19,7 @@
     import { getYear } from '../../utils/getYear'
     import formu from './formu.vue';
     import Comments from './Comments.vue';
-    import router from '../../router';
+    import router from '../../router';  
 
     export default {
         name: 'InfosFilm',
@@ -31,7 +31,7 @@
         },
         data () {
             return {
-                idFilm: 0,
+                idFilm: null,
                 infos: null,
                 loading: true,
                 errored: false,
@@ -59,13 +59,14 @@
         methods:{
             getData(){
                 const req = new XMLHttpRequest();
-                req.open('GET','http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php', false);
+                req.open('GET',`http://10.20.0.91/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
                 req.send(null);
                 if (req.status === 200 ){
                     this.lists = JSON.parse(req.response)
                 } else {
                 }
             },
+    
             getYear, 
             getImage,
         },

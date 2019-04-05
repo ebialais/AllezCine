@@ -12,10 +12,7 @@
                         <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
                     </router-link> 
                 </div>
-            </div>
-    
-            
-
+            </div> 
         </section>
     </div>
 </template>
