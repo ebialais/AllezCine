@@ -1,13 +1,11 @@
 <template>
     <div id="info">
-        <div id="poster">
-            <mainTitle :mainTitle="infos.original_title" />
-            <img :src="getImage(infos.backdrop_path)" />
-            <p>{{ infos.overview }}</p>
-            <div v-for="(genre, index) in infos.genres" :key="index">
-                {{ genre.name }}
-            </div>
-        </div>
+        <poster :infoTitle="infos.title" 
+                :source="getImage(infos.poster_path)" 
+                :year="getYear(infos.release_date)" 
+                :rate="infos.vote_average"
+                :genres="infos.genres"
+                :synopsis="infos.overview" />
         <formu :getData="getData" />
         <Comments :getData="getData" />
     </div>
@@ -15,7 +13,7 @@
 
 <script>
     import { axios } from './../../Plugins/Axios'
-    import card from '../../components/card/card'
+    import poster from '../../components/card/poster'
     import mainTitle from '../../components/Title/title'
     import { getImage } from '../../utils/getImage'
     import { getYear } from '../../utils/getYear'
@@ -27,7 +25,7 @@
         name: 'InfosFilm',
         components: {
             mainTitle,
-            card,
+            poster,
             formu, 
             Comments,
         },
