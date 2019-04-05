@@ -21,9 +21,13 @@ export default {
         flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
-        width: 80vw;
+        /* width: 80vw; */
         margin: 20px auto;
-        height: 500px;
+        /* height: 500px; */
+        min-width: 150px;
+        max-width: 200px;
+        width: 100%;
+        height: auto;
     }
     img {
         width: 85%;
@@ -45,7 +49,7 @@ export default {
         padding-bottom: 10px;
     } 
     
-    @media only screen and (min-width: 400px) {
+    /* @media only screen and (min-width: 400px) {
         #card {
             float: left;
             width: 48%;
@@ -102,5 +106,5 @@ export default {
             height: 720px;
             font-size: 2em;
         }
-    }
+    } */
 </style>

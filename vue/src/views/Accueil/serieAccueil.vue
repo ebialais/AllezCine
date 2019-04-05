@@ -34,7 +34,6 @@ export default {
             page: 1,
             loading: true,
             errored: false,
-            srcImg: [],
         }
     },
     components: {
@@ -67,5 +66,9 @@ export default {
     #serieAccueil{
         width: 70%;
         margin: auto;
+    }
+    .link{
+        display: flex;
+        width: fit-content;
     }
 </style>
