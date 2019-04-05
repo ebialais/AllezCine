@@ -1,13 +1,18 @@
 <template>
     <div id="info">
-        <poster :infoTitle="infos.title" 
+        <section v-if="errored">
+            <Error />
+        </section>
+        <section v-else>
+            <poster :infoTitle="infos.title" 
                 :source="getImage(infos.poster_path)" 
                 :year="getYear(infos.release_date)" 
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-        <formu :getData="getData" />
-        <Comments :getData="getData" />
+            <formu :getData="getData" />
+            <Comments :getData="getData" />
+        </section>
     </div>
 </template>
 
@@ -20,6 +25,7 @@
     import formu from './formu.vue';
     import Comments from './Comments.vue';
     import router from '../../router';  
+    import Error from '../../components/Error/Error'
 
     export default {
         name: 'InfosFilm',
@@ -28,6 +34,7 @@
             poster,
             formu, 
             Comments,
+            Error,
         },
         data () {
             return {
