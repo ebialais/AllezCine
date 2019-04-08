@@ -14,19 +14,19 @@
         <div>
             <carousel>
                 <carousel-slide>
-                    <img src="https://image.tmdb.org/t/p/w1280/bUUUAnggVzsgkwO5dJgkgAcQPRc.jpg" width="100%">
+                    <img :src="caroussel.slide1.source" width="100%">
                 </carousel-slide>
                 <carousel-slide>
-                    <img src="https://image.tmdb.org/t/p/w1280/3v6dxV5l6Zs2OcrAnIcuE9POeGY.jpg" width="100%">
+                    <img :src="caroussel.slide2.source" width="100%">
                 </carousel-slide>
                 <carousel-slide>
-                    <img src="https://image.tmdb.org/t/p/w1280/bUUUAnggVzsgkwO5dJgkgAcQPRc.jpg" width="100%">
+                    <img :src="caroussel.slide3.source" width="100%">
                 </carousel-slide>
                 <carousel-slide>
-                    <img src="https://image.tmdb.org/t/p/w1280/3v6dxV5l6Zs2OcrAnIcuE9POeGY.jpg" width="100%">
+                    <img :src="caroussel.slide4.source" width="100%">
                 </carousel-slide>
                 <carousel-slide>
-                    <img src="https://image.tmdb.org/t/p/w1280/3v6dxV5l6Zs2OcrAnIcuE9POeGY.jpg" width="100%">
+                    <img :src="caroussel.slide5.source" width="100%">
                 </carousel-slide>
             </carousel>
         </div>
@@ -42,6 +42,28 @@ export default {
     data () {
         return {
             icon : true,
+            caroussel: {
+                slide1 : {
+                    source: "https://image.tmdb.org/t/p/original/aJn9XeesqsrSLKcHfHP4u5985hn.jpg",
+                    lien: "/InfosFilm/283995/"
+                },
+                slide2 : {
+                    source: "https://image.tmdb.org/t/p/original/lvjscO8wmpEbIfOEZi92Je8Ktlg.jpg",
+                    lien: "/InfosFilm/450465/"
+                },
+                slide3 : {
+                    source: "https://image.tmdb.org/t/p/original/skauHPLA4so9PqOuu3jhWmiWnFd.jpg",
+                    lien: "/InfosFilm/297802/"
+                },
+                slide4 : {
+                    source: "https://image.tmdb.org/t/p/original/mWLljCmpqlcYQh7uh51BBMwCZwN.jpg",
+                    lien: "/InfosFilm/522681/"
+                },
+                slide5 : {
+                    source: "https://image.tmdb.org/t/p/original/n2aX63BmW7zIKgKJ58e6rKlSsdi.jpg",
+                    lien: "/InfosFilm/157433/"
+                },
+            }
         }
     },
     components: {
@@ -59,7 +81,6 @@ export default {
 <style scoped>
     #header {
         /* height: 200px; */
-        background-color: red;
         width: 100vw;
         margin: 0;
     }

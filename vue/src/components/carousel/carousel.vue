@@ -5,11 +5,11 @@
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
     <div class="carousel__pagination">
-      <button v-for="n in slidesCount" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
+      <button v-for="(n, index) in slidesCount" :key="index" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
     </div>
   </div>
 </template>
- 
+
 <script>
   export default {
 
