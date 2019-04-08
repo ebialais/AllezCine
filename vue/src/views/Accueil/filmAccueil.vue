@@ -1,18 +1,20 @@
 <template>
     <div id="filmAccueil">
         <section v-if="errored">
-            <p>Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces informations pour le moment. Veuillez réessayer ultérieurement.</p>
+            <Error />
         </section>
         <section v-else>
             <mainTitle :mainTitle="'Films'" />
-                <div v-for="(film, index) in films" :key="index" :film='film'>
-                <div v-if="index < 12">
-                    <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
-                        <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
-                    </router-link>                
+                <div id="FilmContent">
+                    <div v-for="(film, index) in films" :key="index" :film='film'>
+                        <div v-if="index < 12">
+                            <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
+                                <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
+                            </router-link>                
+                        </div>
+                    </div>
                 </div>
-                <div v-else></div>
-            </div>
+                
         </section>
     </div>
 </template>
@@ -24,6 +26,7 @@ import { getImage } from '../../utils/getImage'
 import { getYear } from '../../utils/getYear'
 import card from '../../components/card/card'
 import mainTitle from '../../components/Title/title'
+import Error from '../../components/Error/Error'
 
 export default {
     name: "filmAccueil",
@@ -45,6 +48,7 @@ export default {
     components: {
         mainTitle,
         card,
+        Error,
     },
     mounted () {
         axios
@@ -69,7 +73,15 @@ export default {
 
 <style scoped>
     #filmAccueil{
-        width: 70%;
+        width: 85%;
         margin: auto;
+    }
+    #FilmContent {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .link{
+        display: flex;
+        width: fit-content;
     }
 </style>

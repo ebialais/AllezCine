@@ -1,38 +1,60 @@
 <template>
     <div id="info">
-        <poster :infoTitle="infos.title" 
+        <section v-if="errored">
+            <Error />
+        </section>
+        <section v-else>
+            <poster :infoTitle="infos.title" 
                 :source="getImage(infos.poster_path)" 
                 :year="getYear(infos.release_date)" 
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-        <formu :getData="getData" />
-        <Comments :getData="getData" />
+            <formu :getData="getData" />
+            <Comments :getData="getData" />
+            <div id="FilmsSupp">
+                <div id="FilmInfoSupp">
+                    <div v-for="(el, index) in infosSupp" :key="index">
+                        <div v-if="index < 5">
+                            <router-link :to="{ name: 'InfosFilm', params: { id: el.id } }" class="link">
+                                <card :title="el.title" :year="getYear(el.release_date)" :source="getImage(el.poster_path)" /> 
+                            </router-link> 
+                        </div>
+                    </div>  
+                </div>
+                
+            </div>
+        </section>
     </div>
 </template>
 
 <script>
     import { axios } from './../../Plugins/Axios'
     import poster from '../../components/card/poster'
+    import card from '../../components/card/card'
     import mainTitle from '../../components/Title/title'
     import { getImage } from '../../utils/getImage'
     import { getYear } from '../../utils/getYear'
     import formu from './formu.vue';
     import Comments from './Comments.vue';
     import router from '../../router';  
+    import Error from '../../components/Error/Error'
 
     export default {
         name: 'InfosFilm',
         components: {
             mainTitle,
             poster,
+            card,
             formu, 
             Comments,
+            Error,
         },
         data () {
             return {
                 idFilm: null,
                 infos: null,
+                infosSupp: null,
                 loading: true,
                 errored: false,
                 film: null,
@@ -54,12 +76,29 @@
             })
             .finally(() => {
                 this.loading = false;
+            }), 
+            axios
+            .get(`https://api.themoviedb.org/3/movie/${this.idFilm}/similar?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&`)
+            .then(response => {
+                console.log(response)
+                this.infosSupp = response.data.results ? response.data.results : [] 
+            })
+            .catch(error => {
+                console.log(error)
+                this.errored = true
+            })
+            .finally(() => {
+                this.loading = false;
             })
         },
         methods:{
             getData(){
                 const req = new XMLHttpRequest();
+<<<<<<< HEAD
                 req.open('GET',`http://10.20.0.116/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
+=======
+                req.open('GET',`http://10.20.0.91/Projet_allezcine/allezcine/php/getData.php?idFilm=${id.idFilm}`, false);
+>>>>>>> a802b737c0bd35855c3fafd878676e9dc53d03d7
                 req.send(null);
                 if (req.status === 200 ){
                     this.lists = JSON.parse(req.response)
@@ -78,5 +117,13 @@
     #info {
         width: 80%;
         margin: auto;
+    }
+    .link{
+        display: flex;
+        width: fit-content;
+    }
+    #FilmInfoSupp {
+        display: flex;
+        flex-wrap: wrap;
     }
 </style>
