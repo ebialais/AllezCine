@@ -1,7 +1,9 @@
 <template>
   <div class="carousel">
     <slot></slot>
-    <i class="far fa-angle-right" width="30px"></i>
+    <!-- <i class="far fa-angle-right" width="30px"></i> -->
+    <div class="logo"><img alt="logo Allez Ciné" src="/assets/logoAllezCine.png"></div>
+    
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
     <div class="carousel__pagination">
@@ -37,14 +39,17 @@
       next () {
         this.index++
         this.direction = 'right'
-        if (this.index > this.slidesCount) {
-          this.index = 0
+        if (this.index >= this.slidesCount) {
+          this.index = 0; 
+          
+          
         }
+    
       },
       prev () {
         this.index--
         this.direction = 'left'
-        if (this.index <= 0) {
+        if (this.index < 0) {
           this.index = this.slidesCount - 1
 
         }
@@ -61,22 +66,44 @@
 
 <style scoped>
 
-* {
+  * {
   border: 0;
-}
-  .carousel__nav {
+  }
+
+  .logo{
+    position: absolute;
+    top: 40%;
+    margin-top: -150px;
+    padding-left: 10px;
+  }
+
+  .carousel__prev{
+    position: absolute;
+    left: 10px;
+    top: 157px;
+    /* margin-top: -31px; */
+    background: url(/assets/prev.png);
+    width: 55px;
+    height: 77px;
+  }
+
+  /* .carousel__nav {
     position: absolute;
     top: 50%;
     margin-top: -31px;
     background: url(/assets/prev.png);
     width: 55px;
     height: 77px;
-  }
+  } */
 
-.carousel__nav.carousel__next {
+.carousel__next {
+  position: absolute;
   right: 10px;
-  left: auto;
+  top: 157px;
   background: url(/assets/next.png);
+  width: 55px;
+  height: 77px;
+  /* margin-top: -31px; */
 }
 
 .carousel__pagination {
