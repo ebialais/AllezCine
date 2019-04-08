@@ -2,18 +2,14 @@
   <div id="app">
     <Tete />
     <social />
-    <router-view/>
+    <router-view :key="$route.fullPath" />
     <Pied />
   </div>
 </template>
 
 <script>
   import Tete from './components/Header/Header.vue';
-<<<<<<< HEAD
-  import social from './components/socialmedia/social.vue';
-=======
   import social from './components/socialmedia/social';
->>>>>>> a802b737c0bd35855c3fafd878676e9dc53d03d7
   import Pied  from './components/Footer/Footer.vue';
   
   export default {

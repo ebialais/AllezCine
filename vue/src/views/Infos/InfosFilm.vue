@@ -10,8 +10,10 @@
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-            <formu :getData="getData" />
-            <Comments :getData="getData" />
+            <formu />
+            <div v-if="comments">
+                <Comments v-for="(comment, index) in comments" :key="index" :comment="comment" />
+            </div>
             <div id="FilmsSupp">
                 <div id="FilmInfoSupp">
                     <div v-for="(el, index) in infosSupp" :key="index">
@@ -90,18 +92,15 @@
             .finally(() => {
                 this.loading = false;
             })
+            const req = new XMLHttpRequest();
+            req.open('GET',`http://10.20.0.116:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
+            req.send(null);
+            if (req.status === 200 ){
+                this.comments = JSON.parse(req.response)
+            } else {
+            }
         },
         methods:{
-            getData(){
-                const req = new XMLHttpRequest();
-                req.open('GET',`http://10.20.0.91/Projet_allezcine/allezcine/php/getData.php?idFilm=${id.idFilm}`, false);
-                req.send(null);
-                if (req.status === 200 ){
-                    this.lists = JSON.parse(req.response)
-                } else {
-                }
-            },
-    
             getYear, 
             getImage,
         },

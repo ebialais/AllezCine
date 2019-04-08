@@ -10,8 +10,11 @@
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-            <formu :getData="getData" />
-            <Comments v-for="(comment, index) in comments" :key="index" :comment="comment" :getData="getData" />
+            <formu />
+            <div v-if="comments">
+                <Comments v-for="(comment, index) in comments" :key="index" :comment="comment" />
+            </div>
+            <div v-else></div>
             <div id="SerieSupp">
                 <div id="SerieInfoSupp">
                     <div v-for="(el, index) in infosSupp" :key="index">
@@ -34,7 +37,7 @@
     import { getImage } from '../../utils/getImage'
     import { getYear } from '../../utils/getYear'
     import formu from './formu';
-    import Comments from './Comments';
+    import Comments from './Comments.vue';
     import router from '../../router';
     import Error from '../../components/Error/Error'
 
@@ -88,17 +91,15 @@
             .finally(() => {
                 this.loading = false;
             })
+            const req = new XMLHttpRequest();
+            req.open('GET',`http://10.20.0.116:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
+            req.send(null);
+            if (req.status === 200 ){
+                this.comments = JSON.parse(req.response)
+            } else {
+            }
         },
         methods:{
-            getData(){
-                const req = new XMLHttpRequest();
-                req.open('GET',`http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
-                req.send(null);
-                if (req.status === 200 ){
-                    this.comments = JSON.parse(req.response)
-                } else {
-                }
-            },
             getYear, 
             getImage,
         },

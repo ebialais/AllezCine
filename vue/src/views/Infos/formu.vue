@@ -48,13 +48,12 @@
                 }
             },
             props:[
-                "getData",
                 "insertData",
             ],
         }
     }
 </script>
-<style>
+<style scoped>
     #formu {
         clear: left;
         padding-top: 50px; /* pour que ce ne soit pas trop coller à l'image */
@@ -69,7 +68,6 @@
         padding: 30px
     }
     form {
-        
         background-color: white;
         border-radius: 5px;
         box-shadow: 1px 3px 5px #797979;
@@ -77,7 +75,6 @@
         margin: auto;
         padding: 20px;
         margin-bottom: 100px;
-        
     }
     #titleCom {
         width: 100%;
@@ -93,6 +90,7 @@
         height: 80px;
         margin: 20px 0;
         font-family: 'Alegreya Sans', sans-serif;
+        font-size: 1em;
         padding: 2px;
         border-radius: 5px;
         border: 2px solid #d4d4d4;
