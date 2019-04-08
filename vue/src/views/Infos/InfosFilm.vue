@@ -94,11 +94,7 @@
         methods:{
             getData(){
                 const req = new XMLHttpRequest();
-<<<<<<< HEAD
                 req.open('GET',`http://10.20.0.116/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
-=======
-                req.open('GET',`http://10.20.0.91/Projet_allezcine/allezcine/php/getData.php?idFilm=${id.idFilm}`, false);
->>>>>>> a802b737c0bd35855c3fafd878676e9dc53d03d7
                 req.send(null);
                 if (req.status === 200 ){
                     this.lists = JSON.parse(req.response)
@@ -121,6 +117,8 @@
     .link{
         display: flex;
         width: fit-content;
+        text-decoration: none;
+        color:rgb(114, 113, 113);
     }
     #FilmInfoSupp {
         display: flex;

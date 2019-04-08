@@ -1,15 +1,28 @@
 <template>
     <div id="header">
-        <div id="nav">
+        <div id="nav" v-if="windowWidth > 500">
+            <div class="navigator">
+                <router-link to="/" class="link">HOME</router-link>
+                <router-link to="/topFilms" class="link">Films populaires</router-link>
+                <router-link to="/topSeries" class="link">Série TV</router-link>
+            </div>
+            <form>
+                <input id='wordInput' name="search"  list='suggest' autocomplete="off" required type="text" value="Recherche..." :getSuggest="getSuggest"/>
+            </form>
+        </div>
+        <div id="nav" v-else>
             <div v-if="icon" >
                 <i class="fas fa-bars" @click="menuClick"></i>
             </div>
-            <div v-else>
+            <div class="navigator" v-else>
                 <i class="fas fa-times" @click="menuClick"></i>
-                <router-link to="/" class="link">Home</router-link>
-                <router-link to="/topFilms" class="link">top Films</router-link>
-                <router-link to="/topSeries" class="link">top Series</router-link>
+                <router-link to="/" class="link">HOME</router-link>
+                <router-link to="/topFilms" class="link">Films populaires</router-link>
+                <router-link to="/topSeries" class="link">Série Tv</router-link>
             </div>
+            <form>
+                <input id='wordInput' name="search"  list='suggest' autocomplete="off" required type="text" value="Recherche..." :getSuggest="getSuggest"/>
+            </form>
         </div>
         <div>
             <carousel>
@@ -30,25 +43,39 @@
 <script>
 import carousel from './../carousel/carousel'
 import carouselSlide from './../carousel/carouselSlide'
+import { getSuggest } from '../../utils/getSuggest.js'
+
 
 export default {
     name: 'Tete',
     data () {
         return {
             icon : true,
+            bigScreen : false,
+            windowWidth: window.innerWidth,
         }
     },
     components: {
         carousel,
         carouselSlide,
     },
+
+    mounted () {
+        window.onresize = () => {
+            this.windowWidth = window.innerWidth
+            console.log(this.windowWidth);
+        }
+    },
+
     methods: {
         menuClick(){
             this.icon = !this.icon
-        }
+        },
+        getSuggest: Function,
     }
 }
 </script>
+
 
 <style scoped>
     #header {
@@ -56,32 +83,56 @@ export default {
         background-color: red;
         width: 100vw;
         margin: 0;
+        font-family: 'Alegreya Sans', sans-serif;
+
     }
     #nav {
         background-color: #262626;
         height: 50px;
         width: 100%;
         margin: 0;
+        padding-top: 2%;
     }
     .fa-times, .fa-bars {
         color: white;
         font-size : 25px;
-        float: right;
         padding: 5px;
+        float: left;
     }
+
     .link {
         color: white;
         text-decoration: none;
         padding: 5px;
-        border: 2px solid white;
+        margin-left: 5%;
     }
+
+    .link:hover{
+        color: red;
+    }
+
     .carousel {
         position: relative;
         overflow: hidden;
         height: 400px;
     }
-    img{
+
+    #wordInput {
+        border-radius: 20px;
+        border: none;
+        width: 25%; 
+        padding: 0.5%;
+        float: right;
+        margin-right: 1%;
+    }
+
+    img {
         width: 100%;
+    }
+
+    .navigator {
+        width: 60%;
+        float: left;
     }
     
   
