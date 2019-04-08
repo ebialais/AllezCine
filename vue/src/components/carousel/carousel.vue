@@ -1,14 +1,17 @@
 <template>
   <div class="carousel">
     <slot></slot>
+    <!-- <i class="far fa-angle-right" width="30px"></i> -->
+    <div class="logo"><img alt="logo Allez Ciné" src="/assets/logoAllezCine.png"></div>
+    
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
     <div class="carousel__pagination">
-      <button v-for="n in slidesCount" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
+      <button v-for="(n, index) in slidesCount" :key="index" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
     </div>
   </div>
 </template>
- 
+
 <script>
   export default {
 
@@ -36,14 +39,17 @@
       next () {
         this.index++
         this.direction = 'right'
-        if (this.index > this.slidesCount) {
-          this.index = 0
+        if (this.index >= this.slidesCount) {
+          this.index = 0; 
+          
+          
         }
+    
       },
       prev () {
         this.index--
         this.direction = 'left'
-        if (this.index <= 0) {
+        if (this.index < 0) {
           this.index = this.slidesCount - 1
 
         }
@@ -59,26 +65,45 @@
 </script>
 
 <style scoped>
-  /* .carousel {
-    position: relative;
-    overflow: hidden;
-    height: 400px;
-  } */
-  
-  .carousel__nav {
+
+  * {
+  border: 0;
+  }
+
+  .logo{
     position: absolute;
-    top: 50%;
-    /* left: 10%; */
-    margin-top: -31px;
-    background: url(prev.png);
+    top: 40%;
+    margin-top: -150px;
+    padding-left: 10px;
+  }
+
+  .carousel__prev{
+    position: absolute;
+    left: 10px;
+    top: 157px;
+    /* margin-top: -31px; */
+    background: url(/assets/prev.png);
     width: 55px;
     height: 77px;
   }
 
-.carousel__nav.carousel__next {
+  /* .carousel__nav {
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    background: url(/assets/prev.png);
+    width: 55px;
+    height: 77px;
+  } */
+
+.carousel__next {
+  position: absolute;
   right: 10px;
-  left: auto;
-  background: url(next.png);
+  top: 157px;
+  background: url(/assets/next.png);
+  width: 55px;
+  height: 77px;
+  /* margin-top: -31px; */
 }
 
 .carousel__pagination {
@@ -97,8 +122,8 @@
   opacity: 0.8;
   border-radius: 10px;
   margin: 0 2px;
-
 }
+
 .carousel__pagination button.active {
   background-color: #fff;
 } 

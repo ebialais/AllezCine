@@ -2,7 +2,7 @@
   <div id="app">
     <Tete />
     <social />
-    <router-view/>
+    <router-view :key="$route.fullPath" />
     <Pied />
   </div>
 </template>
@@ -26,7 +26,7 @@
   body {
     margin: 0;
     width: 100vw;
-    overflow-x: none;
+    overflow-x: hidden;
     background-color: #f9f9f9;
   }
   #app {

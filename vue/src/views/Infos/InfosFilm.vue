@@ -10,8 +10,10 @@
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-            <formu :getData="getData" />
-            <Comments :getData="getData" />
+            <formu />
+            <div v-if="comments">
+                <Comments v-for="(comment, index) in comments" :key="index" :comment="comment" />
+            </div>
             <div id="FilmsSupp">
                 <div id="FilmInfoSupp">
                     <div v-for="(el, index) in infosSupp" :key="index">
@@ -65,7 +67,7 @@
         },
         mounted () {
             axios
-            .get(`https://api.themoviedb.org/3/movie/${this.idFilm}?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&`)
+            .get(`https://api.themoviedb.org/3/movie/${this.idFilm}?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&language=fr`)
             .then(response => {
                 console.log(response)
                 this.infos = response.data ? response.data : [] 
@@ -78,7 +80,7 @@
                 this.loading = false;
             }), 
             axios
-            .get(`https://api.themoviedb.org/3/movie/${this.idFilm}/similar?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&`)
+            .get(`https://api.themoviedb.org/3/movie/${this.idFilm}/similar?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&language=fr`)
             .then(response => {
                 console.log(response)
                 this.infosSupp = response.data.results ? response.data.results : [] 
@@ -90,18 +92,15 @@
             .finally(() => {
                 this.loading = false;
             })
+            const req = new XMLHttpRequest();
+            req.open('GET',`http://10.20.0.116:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
+            req.send(null);
+            if (req.status === 200 ){
+                this.comments = JSON.parse(req.response)
+            } else {
+            }
         },
         methods:{
-            getData(){
-                const req = new XMLHttpRequest();
-                req.open('GET',`http://10.20.0.116/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
-                req.send(null);
-                if (req.status === 200 ){
-                    this.lists = JSON.parse(req.response)
-                } else {
-                }
-            },
-            
             getYear, 
             getImage,
         },
@@ -121,6 +120,8 @@
         color:rgb(114, 113, 113);
     }
     #FilmInfoSupp {
+        width : 90%;
+        margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
