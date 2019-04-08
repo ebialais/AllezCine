@@ -1,0 +1,26 @@
+
+window.onload = function () {
+    var response = ''
+
+    document.querySelector('#wordInput').addEventListener('keypress', keyPress)
+
+    function keyPress(e) {
+        setTimeout(function() {
+            let input = document.querySelector('#wordInput').value;
+            const lienTmdb = "https://api.themoviedb.org/3/discover/movie?api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=" + input;
+            console.log(lienTmdb);
+            const req = new XMLHttpRequest();
+            req.open("GET", lienTmdb, false);
+            req.send();
+            if (req.status == 200) {
+                response = JSON.parse(req.response)
+                console.log(response) 
+                for (i=0; i<10; i++) {
+                    document.querySelector('#suggest').childNodes[i+1].value = response[1][i]
+                }
+                document.querySelector('#wordInput').addEventListener('keypress', keyPress)
+            }
+        }, 1000)
+    };
+
+}

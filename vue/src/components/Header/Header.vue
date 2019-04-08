@@ -40,7 +40,7 @@ export default {
     },
     components: {
         carousel,
-        carouselSlide
+        carouselSlide,
     },
     methods: {
         menuClick(){

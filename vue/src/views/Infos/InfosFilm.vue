@@ -6,7 +6,7 @@
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-        <formu :getData="getData" :insertData="insertData" />
+        <formu :getData="getData" />
         <Comments :getData="getData" />
     </div>
 </template>
@@ -59,7 +59,7 @@
         methods:{
             getData(){
                 const req = new XMLHttpRequest();
-                req.open('GET',`http://10.20.0.91/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
+                req.open('GET',`http://10.20.0.116/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
                 req.send(null);
                 if (req.status === 200 ){
                     this.lists = JSON.parse(req.response)

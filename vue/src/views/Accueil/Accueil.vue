@@ -2,12 +2,14 @@
     <div id="Accueil">
         <filmAccueil />
         <serieAccueil />
+        <searchBar />
     </div>
 </template>
 
 <script>
     import filmAccueil from './filmAccueil'
     import serieAccueil from './serieAccueil.vue'
+    import searchBar from '../../components/searchBar/searchBar.vue'
     
 
     export default {
@@ -15,6 +17,7 @@
         components: {
             filmAccueil,
             serieAccueil,
+            searchBar,
         },
     }
 </script>
