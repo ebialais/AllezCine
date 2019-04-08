@@ -9,7 +9,7 @@
 
 <script>
   import Tete from './components/Header/Header.vue';
-  import social from '.components/socialmedia/social.vue';
+  import social from './components/socialmedia/social';
   import Pied  from './components/Footer/Footer.vue';
   
   export default {

@@ -6,13 +6,15 @@
 
         <section v-else>
             <mainTitle :mainTitle="'Series TV'" />
-            <div v-for="(tv, index) in tvs" :key="index">
-                <div v-if="index < 12">
-                    <router-link :to="{ name: 'InfosTv', params: { id: tv.id } }" class="link">
-                        <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
-                    </router-link> 
-                </div>
-            </div> 
+            <div id="SerieContent">
+                <div v-for="(tv, index) in tvs" :key="index">
+                    <div v-if="index < 12">
+                        <router-link :to="{ name: 'InfosTv', params: { id: tv.id } }" class="link">
+                            <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
+                        </router-link> 
+                    </div>
+                </div> 
+            </div>
         </section>
     </div>
 </template>
@@ -64,8 +66,12 @@ export default {
 
 <style scoped>
     #serieAccueil{
-        width: 70%;
+        width: 85%;
         margin: auto;
+    }
+    #SerieContent {
+        display: flex;
+        flex-wrap: wrap;
     }
     .link{
         display: flex;

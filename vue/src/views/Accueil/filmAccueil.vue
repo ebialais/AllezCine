@@ -5,14 +5,16 @@
         </section>
         <section v-else>
             <mainTitle :mainTitle="'Films'" />
-                <div v-for="(film, index) in films" :key="index" :film='film'>
-                <div v-if="index < 12">
-                    <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
-                        <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
-                    </router-link>                
+                <div id="FilmContent">
+                    <div v-for="(film, index) in films" :key="index" :film='film'>
+                        <div v-if="index < 12">
+                            <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
+                                <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
+                            </router-link>                
+                        </div>
+                    </div>
                 </div>
-                <div v-else></div>
-            </div>
+                
         </section>
     </div>
 </template>
@@ -71,8 +73,12 @@ export default {
 
 <style scoped>
     #filmAccueil{
-        width: 70%;
+        width: 85%;
         margin: auto;
+    }
+    #FilmContent {
+        display: flex;
+        flex-wrap: wrap;
     }
     .link{
         display: flex;
