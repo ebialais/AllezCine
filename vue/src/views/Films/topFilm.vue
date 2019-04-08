@@ -94,5 +94,7 @@
     .link{
         display: flex;
         width: fit-content;
+        text-decoration: none;
+        color:rgb(114, 113, 113);
     }
 </style>
