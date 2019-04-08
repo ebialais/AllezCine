@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Tete />
+    <social />
+    <router-view :key="$route.fullPath" />
+    <Pied />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  import Tete from './components/Header/Header.vue';
+  import social from './components/socialmedia/social';
+  import Pied  from './components/Footer/Footer.vue';
+  
+  export default {
+    components: {
+      Tete,
+      social, 
+      Pied,
+    },
   }
-}
 </script>
 
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #f9f9f9;
+  }
+  #app {
+    margin: 0;
+    width: 100vw;
+    overflow-x: none;
+  }
 </style>

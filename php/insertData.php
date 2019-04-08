@@ -1,15 +1,15 @@
 <?php
-    require './ddbConnect2.php';
-    require './headerSettings.php';
+    require './bddConnect.php';
+    require './headerSetting.php';
 
-    $stmt = $pdo->prepare("INSERT INTO userRate (userCom) VALUES (:userCom)");
-    
-    $userCom = $_GET['userCom'];
-        
-    $stmt->execute([
-        'userCom' => $userCom,
-    ]);
-
+    if (isset($_GET['idFilm']) && isset($_GET['titleCom']) && isset($_GET['userCom'])){
+        $req = $pdo -> prepare ('INSERT INTO `userRate` (idFilm, commentTitre, comment) VALUES (:idFilm, :commentTitre, :comment)');
+        $req -> execute ([
+            ':idFilm' => htmlspecialchars($_GET['idFilm']),
+            ':commentTitre' => htmlspecialchars($_GET['titleCom']),
+            ':comment' => htmlspecialchars($_GET['userCom']),
+        ]);
+    }
     print json_encode($_GET);
-     
+    
 ?>

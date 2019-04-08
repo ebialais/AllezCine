@@ -2,7 +2,7 @@
 
 try
 {
-    $pdo = new PDO('mysql:host=localhost;dbname=commentsDb;charset=utf8', 'root', 'root');
+    $pdo = new PDO('mysql:host=localhost;dbname=commentsDb;charset=utf8', 'allezcine', 'userPassword');
 }
 catch(Exception $e)
 {

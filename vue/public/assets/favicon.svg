@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg885"
+   width="45.656574"
+   height="45.656574"
+   viewBox="0 0 45.656575 45.656573"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:export-filename="/Applications/MAMP/htdocs/Projects/allezcine/vue/src/assets/favicon.png"
+   inkscape:export-xdpi="33.642471"
+   inkscape:export-ydpi="33.642471">
+  <metadata
+     id="metadata891">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs889">
+    <linearGradient
+       id="linearGradient4637"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#eb524a;stop-opacity:1;"
+         offset="0"
+         id="stop4635" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1421"
+     inkscape:window-height="776"
+     id="namedview887"
+     showgrid="false"
+     inkscape:zoom="6.4047887"
+     inkscape:cx="22.847739"
+     inkscape:cy="21.806697"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg885" />
+  <circle
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.37795275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+     id="path969"
+     cx="22.828287"
+     cy="22.828287"
+     r="22.639311" />
+  <text
+     transform="scale(1.0227814,0.97772604)"
+     id="text4633"
+     y="35.145821"
+     x="22.3113"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.80815125px;line-height:1.25;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.78353727;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+     xml:space="preserve"><tspan
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.78353727;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+       y="35.145821"
+       x="22.3113"
+       id="tspan4631"
+       sodipodi:role="line">C</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.80815125px;line-height:1.25;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#eb524a;fill-opacity:1;stroke:#eb524a;stroke-width:0.78353727;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     x="3.5556011"
+     y="33.447357"
+     id="text4586"
+     transform="scale(1.0227814,0.97772604)"><tspan
+       sodipodi:role="line"
+       id="tspan4584"
+       x="3.5556011"
+       y="33.447357"
+       style="stroke:#eb524a;stroke-width:0.78353727;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">A</tspan></text>
+</svg>
