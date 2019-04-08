@@ -1,6 +1,7 @@
 <template>
   <div class="carousel">
     <slot></slot>
+    <i class="far fa-angle-right" width="30px"></i>
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
     <div class="carousel__pagination">
@@ -59,18 +60,15 @@
 </script>
 
 <style scoped>
-  /* .carousel {
-    position: relative;
-    overflow: hidden;
-    height: 400px;
-  } */
-  
+
+* {
+  border: 0;
+}
   .carousel__nav {
     position: absolute;
     top: 50%;
-    /* left: 10%; */
     margin-top: -31px;
-    background: url(prev.png);
+    background: url(/assets/prev.png);
     width: 55px;
     height: 77px;
   }
@@ -78,7 +76,7 @@
 .carousel__nav.carousel__next {
   right: 10px;
   left: auto;
-  background: url(next.png);
+  background: url(/assets/next.png);
 }
 
 .carousel__pagination {
@@ -97,8 +95,8 @@
   opacity: 0.8;
   border-radius: 10px;
   margin: 0 2px;
-
 }
+
 .carousel__pagination button.active {
   background-color: #fff;
 } 
