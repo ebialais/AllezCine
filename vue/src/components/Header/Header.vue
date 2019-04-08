@@ -87,6 +87,8 @@ export default {
         height: 50px;
         width: 100%;
         margin: 0;
+        font-size: 1em;
+        display: block;
     }
     .fa-times, .fa-bars {
         color: white;
@@ -155,5 +157,8 @@ export default {
     }
     span {
         color: red;
+    }
+    @media only screen and (min-width: 500px) {
+        font-size: 1.2em;
     }
 </style>
