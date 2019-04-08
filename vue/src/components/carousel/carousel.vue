@@ -43,14 +43,17 @@
       next () {
         this.index++
         this.direction = 'right'
-        if (this.index > this.slidesCount) {
-          this.index = 0
+        if (this.index >= this.slidesCount) {
+          this.index = 0; 
+          
+          
         }
+    
       },
       prev () {
         this.index--
         this.direction = 'left'
-        if (this.index <= 0) {
+        if (this.index < 0) {
           this.index = this.slidesCount - 1
 
         }
