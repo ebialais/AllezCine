@@ -6,7 +6,7 @@
                 :rate="infos.vote_average"
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
-        <formu :getData="getData" />
+        <formu :getData="getData" :insertData="insertData" />
         <Comments :getData="getData" />
     </div>
 </template>
@@ -66,7 +66,7 @@
                 } else {
                 }
             },
-    
+            
             getYear, 
             getImage,
         },

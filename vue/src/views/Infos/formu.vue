@@ -17,8 +17,8 @@
 </template>
 
 <script>
-    
 // import { getComment } from '../../api/functionComments.js'
+    import { axios } from './../../Plugins/Axios'
 
 export default {    
     name:"formu",
@@ -57,11 +57,14 @@ export default {
                 console.log('error', req.statusText)
             }
         }
+        // insertData(){
+
+        // }
     },
-    props:[
-        "getData",
-        "insertData",
-    ]
+    props:{
+        getData : Function,
+        insertData : Function
+    }
 }
 </script>
 <style>

@@ -8,3 +8,5 @@ export function getComment(idFilm){
         console.log('error', req.statusText)
     }
 }
+
+
