@@ -58,12 +58,13 @@
     }
     #InfoHeader {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
     }
     .infoTitle {
         text-transform: uppercase;
         font-size: 2em;
         font-weight: bold;
+        width: 100%;
     }
     .infoSynopsis {
         color: #797979;
@@ -96,6 +97,11 @@
             float: left;
             margin: 0 20px 20px 0;
         }
+        .infoTitle {
+            overflow:hidden; 
+            white-space:nowrap; 
+            text-overflow:ellipsis; 
+        }
     }
     @media only screen and (min-width: 900px) {
         img {
@@ -103,12 +109,33 @@
             float: left;
             margin: 0 20px 20px 0;
         }
+        #InfoHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .infoTitle {
+            width: 60%;
+            overflow:hidden; 
+            white-space:nowrap; 
+            text-overflow:ellipsis; 
+        }
     }
     @media only screen and (min-width: 1500px) {
         img {
             width: 30%;
             float: left;
             margin: 0 20px 20px 0;
+        }
+        #InfoHeader {
+            display: flex;
+            justify-content: space-between;
+        }
+        .infoTitle {
+            width: 60%;
+            overflow:hidden; 
+            white-space:nowrap; 
+            text-overflow:ellipsis; 
         }
     }
 </style>
