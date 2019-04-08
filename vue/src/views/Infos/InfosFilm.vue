@@ -119,6 +119,8 @@
         width: fit-content;
     }
     #FilmInfoSupp {
+        width : 90%;
+        margin: auto;
         display: flex;
         flex-wrap: wrap;
     }

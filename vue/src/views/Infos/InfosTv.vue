@@ -11,7 +11,7 @@
                 :genres="infos.genres"
                 :synopsis="infos.overview" />
             <formu :getData="getData" />
-            <Comments :getData="getData" />
+            <Comments v-for="(comment, index) in comments" :key="index" :comment="comment" :getData="getData" />
             <div id="SerieSupp">
                 <div id="SerieInfoSupp">
                     <div v-for="(el, index) in infosSupp" :key="index">
@@ -55,6 +55,7 @@
                 loading: true,
                 errored: false,
                 film: null,
+                comments: null,
             }
         },
         created() {
@@ -91,10 +92,10 @@
         methods:{
             getData(){
                 const req = new XMLHttpRequest();
-                req.open('GET',`http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php?idFilm=${id}`, false);
+                req.open('GET',`http://127.0.0.1/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
                 req.send(null);
                 if (req.status === 200 ){
-                    this.lists = JSON.parse(req.response)
+                    this.comments = JSON.parse(req.response)
                 } else {
                 }
             },
@@ -115,6 +116,8 @@
         width: fit-content;
     }
     #SerieInfoSupp {
+        width : 90%;
+        margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
