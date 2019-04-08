@@ -1,11 +1,17 @@
 <template>
   <div class="carousel">
     <slot></slot>
-    <i class="far fa-angle-right" width="30px"></i>
+    <!-- <i class="far fa-angle-right" width="30px"></i> -->
+    <div class="logo"><img alt="logo Allez Ciné" src="assets/logoAllezCine.png"></div>
+    <div id="text-carousel">   
+      <div id="titre">LASTEST <span>ON</span>LINE <span>MO</span>VIES</div>
+      <div id="soustitre">IN SPACE NO ONE CAN HEAR YOU SCREAM</div>
+      <button class="go-film">GO TO THE FILM</button>
+    </div>
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
     <div class="carousel__pagination">
-      <button v-for="n in slidesCount" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
+      <button v-for="n in slidesCount" v-bind:key="n" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
     </div>
   </div>
 </template>
@@ -61,9 +67,61 @@
 
 <style scoped>
 
-* {
+  * {
   border: 0;
-}
+  }
+  
+  #text-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+    
+  }
+
+  .logo{
+    position: absolute;
+    top: 40%;
+    margin-top: -150px;
+    padding-left: 10px;
+  }
+
+  #titre {
+    position: absolute;
+    top: 60%;
+    margin-top: -150px;
+    padding-left: 10px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 2.3em;
+    color: white;
+    text-align: center;
+  }
+
+  #soustitre{
+    position: absolute;
+    top: 70%;
+    margin-top: -150px;
+    padding-left: 10px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1em;
+    color: white;
+  }
+
+  .go-film {
+    background: red;
+    position: absolute;
+    top: 80%;
+    margin-top: -150px;
+    padding-left: 10px;
+    height: 4em;
+    width: 10em;
+
+  }
+
+  span {
+    color: red;
+  }
   .carousel__nav {
     position: absolute;
     top: 50%;
