@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import { getComment } from '../../api/functionComments.js'
     import { axios } from './../../Plugins/Axios'
     import { addComment } from '../../utils/sendData.js'
 
@@ -23,21 +22,17 @@
                 idFilm: null,
             }
         },
+
         created() {
             this.idFilm = this.$route.params.id
         },
-        // mounted(){
-        //     this.comments = getComment(this.$router.params.id);
-        // },
+
         methods: {
          
            sendData(e) {
                 e.preventDefault()
                 if (e.target.titleCom.value != '' && e.target.userCom.value != '') {
                     addComment(this.idFilm, e.target.titleCom.value, e.target.userCom.value)
-                    console.log(this.idFilm, e.target.titleCom.value, e.target.userCom.value);
-                }else{
-                    console.log("please fill the field");
                 }
             },   
         },
@@ -52,12 +47,14 @@
         display: flex;
         flex-direction: column;
     }
+
     h3 {
         color: #797979;
         font-size: 2.5em;
         font-weight:400;
         padding: 30px
     }
+
     form {
         background-color: white;
         border-radius: 5px;
@@ -67,6 +64,7 @@
         padding: 20px;
         margin-bottom: 100px;
     }
+
     #titleCom {
         width: 95%;
         height: 30px;
@@ -77,6 +75,7 @@
         padding: 2%;
         border: 2px solid #d4d4d4;
     }
+    
     #userCom {
         width: 95%;
         height: 80px;

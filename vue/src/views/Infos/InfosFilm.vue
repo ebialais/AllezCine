@@ -22,7 +22,7 @@
                                 <card :title="el.title" :year="getYear(el.release_date)" :source="getImage(el.poster_path)" /> 
                             </router-link> 
                         </div>
-                    </div>  
+                    </div> 
                 </div>
                 
             </div>

@@ -35,10 +35,19 @@
     }
     h4 {
         font-size: 1.5em;
+        border-bottom: 2px solid #d4d4d4;
+        width: 60%;
     }
     #CommentFooter{
+        color: #616060;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
     }
+
+    .fa-thumbs-up:before{
+        color: #03038e ! important ;
+    }
+
+
 </style>
