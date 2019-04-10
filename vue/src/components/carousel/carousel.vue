@@ -7,7 +7,7 @@
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
     <div class="carousel__pagination">
-      <button v-for="(n, index) in slidesCount" :key="index" @click="goto(n-1)" :class="{active: n-1 ==index}"></button>
+      <button v-for="(n, index) in slidesCount" :key="index" @click="goto(n-1)" :class="{active: n-1 == index}"></button>
     </div>
   </div>
 </template>
@@ -79,12 +79,13 @@
 
   .carousel__prev{
     position: absolute;
-    left: 10px;
-    top: 157px;
+    left: -42px;
+    top: 190px;
     /* margin-top: -31px; */
     background: url(/assets/prev.png);
-    width: 55px;
-    height: 77px;
+    width: 60px;
+    height: 30px;
+    background-size: contain;
   }
 
   /* .carousel__nav {
@@ -98,12 +99,12 @@
 
 .carousel__next {
   position: absolute;
-  right: 10px;
-  top: 157px;
+  right: -26px;
+  top: 190px;
   background: url(/assets/next.png);
-  width: 55px;
-  height: 77px;
-  /* margin-top: -31px; */
+  width: 60px;
+  height: 30px;
+  background-size: contain;
 }
 
 .carousel__pagination {
