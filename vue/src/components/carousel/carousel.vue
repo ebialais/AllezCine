@@ -69,34 +69,21 @@
   * {
   border: 0;
   }
-
   .logo{
     position: absolute;
     top: 40%;
     margin-top: -150px;
     padding-left: 10px;
   }
-
   .carousel__prev{
     position: absolute;
     left: -42px;
     top: 190px;
-    /* margin-top: -31px; */
     background: url(/assets/prev.png);
     width: 60px;
     height: 30px;
     background-size: contain;
   }
-
-  /* .carousel__nav {
-    position: absolute;
-    top: 50%;
-    margin-top: -31px;
-    background: url(/assets/prev.png);
-    width: 55px;
-    height: 77px;
-  } */
-
 .carousel__next {
   position: absolute;
   right: -26px;
@@ -106,7 +93,6 @@
   height: 30px;
   background-size: contain;
 }
-
 .carousel__pagination {
   position: absolute;
   bottom: 10px;
@@ -114,7 +100,6 @@
   right: 0;
   text-align: center;
 }
-
 .carousel__pagination button {
   display: inline-block;
   width: 10px;
@@ -124,7 +109,6 @@
   border-radius: 10px;
   margin: 0 2px;
 }
-
 .carousel__pagination button.active {
   background-color: #fff;
 } 
