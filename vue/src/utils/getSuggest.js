@@ -1,6 +1,5 @@
 
 window.onload = function () {
-    // var response = ''
     var el = document.getElementById('wordInput');
     if(el){
         el.addEventListener('click', keyPress, false);
@@ -17,9 +16,6 @@ window.onload = function () {
                 if (req.status == 200) {
                     response = JSON.parse(req.response)
                     console.log(response) 
-                    // for (i=0; i<10; i++) {
-                    //     document.querySelector('#suggest').childNodes[i+1].value = response[1][i]
-                    // }
                     document.querySelector('#wordInput').addEventListener('keypress', keyPress)
                 }
             }, 1000)
@@ -29,16 +25,9 @@ window.onload = function () {
 
         // function loadXMLDoc(e) {
         //     e.preventDefault()
-        //     let iframe = document.createElement('iframe')
         //     for (i=0; i<20; i++) {
-        //         if (capitalize(document.querySelector('#wordInput').value) === response[1][i]) {
-        //             var src = response[3][i]
-        //             iframe.src = src
-        //             deleteBody()
-        //             animationPositive()
-        //             return affichage.appendChild(iframe)
-        //         }else if (document.querySelector('#wordInput').value != response[1][i]){
-                  
+        //         
+        //         }else{
         //         }
         //     }
         // };

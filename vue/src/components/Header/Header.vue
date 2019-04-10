@@ -7,7 +7,7 @@
                 <router-link to="/topSeries" class="link">Série TV</router-link>
             </div>
             <form>
-                <input id='wordInput' name="search"  list='suggest' autocomplete="off" required type="text" value="Recherche..." :getSuggest="getSuggest"/>
+                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
             </form>
         </div>
         <div id="nav" v-else>
@@ -21,7 +21,7 @@
                 <router-link to="/topSeries" class="link">Série Tv</router-link>
             </div>
             <form>
-                <input id='wordInput' name="search"  list='suggest' autocomplete="off" required type="text" value="Recherche..." :getSuggest="getSuggest"/>
+                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
             </form>
         </div>
         <div>
@@ -38,9 +38,7 @@
                         </div>
                     </carousel-slide>
                 </div>
-    
             </carousel>
-            
         </div>
     </div>
 </template>
@@ -90,7 +88,7 @@ export default {
     mounted () {
         window.onresize = () => {
             this.windowWidth = window.innerWidth
-            console.log(this.windowWidth);
+            // console.log(this.windowWidth);
         }
     },
 
@@ -147,10 +145,10 @@ export default {
     #wordInput {
         border-radius: 20px;
         border: none;
-        width: 25%; 
+        width: 20%; 
         padding: 0.5%;
         float: right;
-        margin-right: 1%;
+        margin-right: 2%;
     }
 
     img {
@@ -161,22 +159,25 @@ export default {
         width: 60%;
         float: left;
     }
+
     #carouselContent{
         display: flex;
     }
+
     img{
         width: 100%;
     }
+
     #text-carousel {
         margin-top: 122px;
         position: relative;
         right: 54vw;
-        /* height: 150px; */
         display: flex;
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
-        /* border: 1px solid black; */
+        justify-content: center; 
+        align-content: center;
     
     }
     #Carousel_titre {
@@ -185,30 +186,45 @@ export default {
         font-size: 2.3em;
         color: white;
         text-align: center;
-        margin: 10px;
         width: 600px;
+        margin-left: 40px; 
+
     }
     #Carousel_soustitre{
-        /* position: absolute;
-        top: 70%; */
-        /* margin-top: -150px;
-        padding-left: 10px; */
         font-family: 'Alegreya Sans', sans-serif;
         font-size: 1em;
         color: white;
-        margin: 10px;
+        /* margin: 10px; */
+        margin-left: 70px; 
+        margin-top: 8px; 
         width: 300px;
     }
     #go-film {
         background: red;
-        /* position: absolute;
-        top: 80%; */
-        /* margin-top: -150px;
-        padding-left: 10px; */
-        height: 4em;
+        height: 3em;
         width: 10em;
-        margin: 10px;
+        margin-left: 40px; 
+        margin-top: 10px; 
+
+        /* margin: 10px; */
+        border-radius: 5px;
+        border: none;
+        transition: 0.300s; 
     }
+
+    #go-film:hover {
+        transition: 0.300s; 
+        height: 3.1em;
+        width: 10.1em; 
+        font-size: 0.8rem;
+    }
+
+    .carousel__pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+
     span {
         color: red;
     }

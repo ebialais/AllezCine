@@ -37,14 +37,9 @@ export default {
             loading: true,
             errored: false,
             result: null, 
-            // type: (this.film.title ? 'movie' : 'tv'), 
         }
     },
-    // props: {
-    //     film: {
-    //         type: Object
-    //     },
-    // },
+  
     components: {
         mainTitle,
         card,
@@ -79,6 +74,7 @@ export default {
     #FilmContent {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .link{
         display: flex;

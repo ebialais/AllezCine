@@ -72,6 +72,7 @@ export default {
     #SerieContent {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .link{
         display: flex;

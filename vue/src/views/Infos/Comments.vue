@@ -26,7 +26,7 @@
         background-color: white;
         border-radius: 5px;
         box-shadow: 1px 3px 5px #797979;
-        width: 90%;
+        width: 70%;
         margin: auto;
         padding: 20px;
         margin-bottom: 100px;
