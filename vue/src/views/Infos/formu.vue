@@ -1,5 +1,5 @@
 <template>
-    <div id="formu" @submit="handleSubmit">
+    <div id="formu" @submit="sendData">
         <h3>Commentaires :</h3>
         <form>
             <input name="titleCom" type="text" id="titleCom" placeholder="Titre..." />
@@ -13,6 +13,7 @@
 <script>
 // import { getComment } from '../../api/functionComments.js'
     import { axios } from './../../Plugins/Axios'
+    import { addComment } from '../../utils/sendData.js'
 
     export default {    
         name:"formu",
@@ -29,28 +30,17 @@
         //     this.comments = getComment(this.$router.params.id);
         // },
         methods: {
-            handleSubmit(e){
-                e.preventDefault() 
-                let titleCom = e.target.titleCom.value;
-                let userCom = e.target.userCom.value;
-                this.sendData(titleCom, userCom, this.idFilm); 
-            },
-            sendData(titre, description, idFilm){
-                const req = new XMLHttpRequest();
-                let query = `titleCom=${titre}&userCom=${description}&idFilm=${idFilm}`;
-                console.log(query)
-                req.open('GET',`http://10.20.0.91:8888/Projet_allezcine/allezcine/php/insertData.php?${query}`, false);
-                req.send(null);
-                if (req.status === 200 ){
-                    this.insertData()
-                } else {
-                    console.log('error', req.statusText)
+         
+           sendData(e) {
+                e.preventDefault()
+                if (e.target.titleCom.value != '' && e.target.userCom.value != '') {
+                    addComment(this.idFilm, e.target.titleCom.value, e.target.userCom.value)
+                    console.log(this.idFilm, e.target.titleCom.value, e.target.userCom.value);
+                }else{
+                    console.log("please fill the field");
                 }
-            },
-            props:[
-                "insertData",
-            ],
-        }
+            },   
+        },
     }
 
 </script>

@@ -178,8 +178,8 @@ export default {
         flex-wrap: nowrap;
         justify-content: center; 
         align-content: center;
-    
     }
+
     #Carousel_titre {
         display: inline-block;
         font-family: 'Alegreya Sans', sans-serif;
@@ -188,25 +188,23 @@ export default {
         text-align: center;
         width: 600px;
         margin-left: 40px; 
-
     }
+
     #Carousel_soustitre{
         font-family: 'Alegreya Sans', sans-serif;
         font-size: 1em;
         color: white;
-        /* margin: 10px; */
         margin-left: 70px; 
         margin-top: 8px; 
         width: 300px;
     }
+
     #go-film {
         background: red;
         height: 3em;
         width: 10em;
         margin-left: 40px; 
         margin-top: 10px; 
-
-        /* margin: 10px; */
         border-radius: 5px;
         border: none;
         transition: 0.300s; 
