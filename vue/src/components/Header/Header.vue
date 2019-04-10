@@ -16,9 +16,9 @@
             </div>
             <div class="navigator" v-else>
                 <i class="fas fa-times" @click="menuClick"></i>
-                <router-link to="/" class="link">HOME</router-link>
-                <router-link to="/topFilms" class="link">Films populaires</router-link>
-                <router-link to="/topSeries" class="link">Série Tv</router-link>
+                <router-link to="/" class="link"><i class="fas fa-home"></i></router-link>
+                <router-link to="/topFilms" class="link"><i class="fas fa-film"></i></router-link>
+                <router-link to="/topSeries" class="link"><i class="fas fa-tv"></i></router-link>
             </div>
             <form>
                 <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
@@ -115,7 +115,7 @@ export default {
         width: 100%;
         margin: 0;
         padding-top: 2%;
-        font-size: 1em;
+        font-size: 1.3em;
         display: block;
     }
     .fa-times, .fa-bars {
@@ -220,6 +220,12 @@ export default {
     .carousel__pagination {
         display: flex;
         justify-content: center;
+    }
+
+    .fa-home {
+        margin-top: 5px; 
+        width: 20px;
+        height: 20px; 
     }
 
 

@@ -1,6 +1,6 @@
 <template>
     <div id="Comments">
-        <h4>{{ comment.titleCom }}</h4>
+        <h4 id="commentTitle">{{ comment.titleCom }}</h4>
         <p>{{ comment.userCom }}</p>
         <div id="CommentFooter">
             {{ comment.date }}
@@ -35,9 +35,13 @@
     }
     h4 {
         font-size: 1.5em;
+    }
+
+    #commentTitle{
         border-bottom: 2px solid #d4d4d4;
         width: 60%;
     }
+    
     #CommentFooter{
         color: #616060;
         display: flex;
