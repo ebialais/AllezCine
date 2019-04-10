@@ -6,19 +6,10 @@
         <section v-else>
             <mainTitle :mainTitle="'Le top des Films'" />
             <div id="Content">
-                <div v-for="(film, index) in films1" :key="index">
-                    <div v-if="index < 40">
-                        <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
-                            <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
-                        </router-link> 
-                    </div>
-                </div> 
-                <div v-for="(film, index) in films2" :key="index">
-                    <div v-if="index < 40">
-                        <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
-                            <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
-                        </router-link> 
-                    </div>
+                <div v-for="(film, index) in films" :key="index">
+                    <router-link :to="{ name: 'InfosFilm', params: { id: film.id } }" class="link">
+                        <card :title="film.title" :year="getYear(film.release_date)" :source="getImage(film.poster_path)" /> 
+                    </router-link> 
                 </div> 
             </div>
         </section>
@@ -38,10 +29,10 @@
         name: 'TopSeries',
         data (){
             return {
-                films1: null,
-                films2:null,
+                films: [],
                 loading: true,
                 errored: false,
+                page: 1,
             }
         },
         components: {
@@ -49,35 +40,50 @@
             card,
             Error,
         },
-        mounted () {
+        beforeMount () {
             axios
-            .get(`https://api.themoviedb.org/3/discover/movie?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=1`)
+            .get(`https://api.themoviedb.org/3/discover/movie?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=${this.page}`)
             .then(response => {
-                this.films1 = response.data && response.data.results ? response.data.results : [] 
+                console.log(response.data.results)
+                for (var i=0; i < response.data.results.length; i++) {
+                    this.films.push(response.data.results[i])
+                }
             })
             .catch(error => {
-                console.log(error)
                 this.errored = true
             })
             .finally(() => {
                 this.loading = false;
-            })
-            axios
-            .get(`https://api.themoviedb.org/3/discover/movie?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=2`)
-            .then(response => {
-                this.films2 = response.data && response.data.results ? response.data.results : [] 
-            })
-            .catch(error => {
-                console.log(error)
-                this.errored = true
-            })
-            .finally(() => {
-                this.loading = false;
-            })
+            }) 
+        },
+        mounted(){
+            this.scroll(this.films)
         },
         methods : {
             getImage,
             getYear,
+            scroll(films){
+                window.onscroll = () => {
+                let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+                if (bottomOfWindow) {
+                    this.page++
+                    axios
+                    .get(`https://api.themoviedb.org/3/discover/movie?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=${this.page}`)
+                    .then(response => {
+                        console.log(response.data.results)
+                        for (var i=0; i < response.data.results.length; i++) {
+                            this.films.push(response.data.results[i])
+                        }
+                    })
+                    .catch(error => {
+                        this.errored = true
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                    })
+                    }
+                }
+            }
         }
     }
 </script>
