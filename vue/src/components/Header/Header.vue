@@ -16,9 +16,9 @@
             </div>
             <div class="navigator" v-else>
                 <i class="fas fa-times" @click="menuClick"></i>
-                <router-link to="/" class="link">HOME</router-link>
-                <router-link to="/topFilms" class="link">Films populaires</router-link>
-                <router-link to="/topSeries" class="link">Série Tv</router-link>
+                <router-link to="/" class="link"><i class="fas fa-home"></i></router-link>
+                <router-link to="/topFilms" class="link"><i class="fas fa-film"></i></router-link>
+                <router-link to="/topSeries" class="link"><i class="fas fa-tv"></i></router-link>
             </div>
             <form>
                 <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
@@ -122,7 +122,7 @@ export default {
         width: 100%;
         margin: 0;
         padding-top: 2%;
-        font-size: 1em;
+        font-size: 1.3em;
         display: block;
     }
     .fa-times, .fa-bars {
@@ -166,8 +166,8 @@ export default {
         flex-wrap: nowrap;
         justify-content: center; 
         align-content: center;
-    
     }
+
     #Carousel_titre {
         display: inline-block;
         font-family: 'Alegreya Sans', sans-serif;
@@ -176,23 +176,23 @@ export default {
         text-align: center;
         width: 600px;
         margin-left: 40px; 
-
     }
+
     #Carousel_soustitre{
         font-family: 'Alegreya Sans', sans-serif;
         font-size: 1em;
         color: white;
-        /* margin: 10px; */
         margin-left: 70px; 
         margin-top: 8px; 
         width: 300px;
     }
+
     #go-film {
         background: red;
         height: 3em;
         width: 10em;
         margin-left: 40px; 
-        margin-top: 10px;
+        margin-top: 10px; 
         border-radius: 5px;
         border: none;
         transition: 0.300s; 
@@ -204,7 +204,16 @@ export default {
         width: 10.1em; 
         font-size: 0.8rem;
     }
+    /* .carousel__pagination {
+        display: flex;
+        justify-content: center;
+    } */
 
+    .fa-home {
+        margin-top: 5px; 
+        width: 20px;
+        height: 20px; 
+    }
 
     img {
         width: 100%;

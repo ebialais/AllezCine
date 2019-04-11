@@ -21,16 +21,9 @@ window.onload = function () {
             }, 1000)
         };
 
-        // document.querySelector("form").addEventListener("submit", loadXMLDoc);
+        document.querySelector("form").addEventListener("submit", loadXMLDoc);
 
-        // function loadXMLDoc(e) {
-        //     e.preventDefault()
-        //     for (i=0; i<20; i++) {
-        //         
-        //         }else{
-        //         }
-        //     }
-        // };
+
 
     }
 }
