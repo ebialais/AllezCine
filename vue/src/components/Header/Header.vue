@@ -7,7 +7,7 @@
                 <router-link to="/topSeries" class="link">Série TV</router-link>
             </div>
             <form>
-                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
+                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
             </form>
         </div>
         <div id="nav" v-else>
@@ -29,7 +29,8 @@
                     :navigate-to="someLocalProperty" 
                     :mouse-drag="false" 
                     :autoplay="true"
-                    :loop="true">
+                    :loop="true"
+                    :paginationPosition="top">
                 <slide v-for="(el, index) in datas" :key="index">
                     <img :src="getImage(el.backdrop_path)" />
                     <div id="text-carousel">   
@@ -41,21 +42,6 @@
                     </div>
                 </slide>
             </Carousel>
-<!-- :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="false" -->
-            <!-- <carousel >
-                <div id="carouselContent">
-                    <carousel-slide v-for="(el, index) in datas" :key="index" >
-                        <img :src="getImage(el.backdrop_path)" />
-                        <div id="text-carousel">   
-                            <div id="Carousel_titre">LASTEST <span>ON</span>LINE <span>MO</span>VIES</div>
-                            <div id="Carousel_soustitre">IN SPACE NO ONE CAN HEAR YOU SCREAM</div>
-                            <router-link :to="getId(el.id)"> 
-                                <button id="go-film" >GO TO THE FILM</button>
-                            </router-link>
-                        </div>
-                    </carousel-slide>
-                </div>
-            </carousel> -->
         </div>
     </div>
 </template>
@@ -63,11 +49,10 @@
 <script>
 import VueCarousel from 'vue-carousel'
 import { Carousel, Slide } from 'vue-carousel'
-// import carousel from './../carousel/carousel'
-// import carouselSlide from './../carousel/carouselSlide'
 import { axios } from './../../Plugins/Axios'
 import { getImage } from '../../utils/getImage'
 import { getId } from '../../utils/getId'
+import { getSuggest } from '../../utils/getSuggest.js'
 
 export default {
     name: 'Tete',
@@ -82,7 +67,6 @@ export default {
     components: {
         Carousel,
         Slide,
-        // carouselSlide,
     },
     beforeMount(){
         axios
@@ -117,6 +101,7 @@ export default {
         },
         getImage,
         getId,
+        getSuggest,
     }
 }
 </script>
@@ -157,40 +142,20 @@ export default {
     .link:hover{
         color: red;
     }
+    #wordInput {
+        border-radius: 20px;
+        border: none;
+        width: 25%; 
+        padding: 0.5%;
+        float: right;
+            margin: -2% 2%;
+    }
 
     #Carou {
         height: 500px;
         overflow: hidden;
     }
-    /* .carousel {
-        position: relative;
-        overflow: hidden;
-        height: 400px;
-    }
-
-    #wordInput {
-        border-radius: 20px;
-        border: none;
-        width: 20%; 
-        padding: 0.5%;
-        float: right;
-        margin-right: 2%;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    .navigator {
-        width: 60%;
-        float: left;
-    }
-
-    #carouselContent{
-        display: flex;
-        width: 100vw;
-    } */
-
+    
     #text-carousel {
         margin-top: 230px;
         position: relative;
@@ -240,10 +205,6 @@ export default {
         font-size: 0.8rem;
     }
 
-    /*.carousel__pagination {
-        display: flex;
-        justify-content: center;
-    } */
 
     img {
         width: 100%;
