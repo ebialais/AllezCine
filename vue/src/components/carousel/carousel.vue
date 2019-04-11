@@ -22,7 +22,9 @@
         direction: null
       }
     },
-
+    props: [
+      "datas"
+    ],
     mounted() {
       this.slides = this.$children,
       this.slides.forEach((slide, i)=> {
@@ -74,6 +76,7 @@
     top: 40%;
     margin-top: -150px;
     padding-left: 10px;
+    width: 50%;
   }
   .carousel__prev{
     position: absolute;

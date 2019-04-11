@@ -7,7 +7,7 @@
                 <router-link to="/topSeries" class="link">Série TV</router-link>
             </div>
             <form>
-                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
+                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
             </form>
         </div>
         <div id="nav" v-else>
@@ -21,33 +21,53 @@
                 <router-link to="/topSeries" class="link">Série Tv</router-link>
             </div>
             <form>
-                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
+                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
             </form>
         </div>
-        <div>
-            <carousel >
-                <div v-for="(slide, index) in slides" :key="index" id="carouselContent">
-                    <carousel-slide>
-                        <img :src="slide.source" width="100%">
+        <div id="Carou">
+            <Carousel :per-page="1" 
+                    :navigate-to="someLocalProperty" 
+                    :mouse-drag="false" 
+                    :autoplay="true"
+                    :loop="true">
+                <slide v-for="(el, index) in datas" :key="index">
+                    <img :src="getImage(el.backdrop_path)" />
+                    <div id="text-carousel">   
+                        <div id="Carousel_titre">LASTEST <span>ON</span>LINE <span>MO</span>VIES</div>
+                        <div id="Carousel_soustitre">IN SPACE NO ONE CAN HEAR YOU SCREAM</div>
+                        <router-link :to="getId(el.id)"> 
+                            <button id="go-film" >GO TO THE FILM</button>
+                        </router-link>
+                    </div>
+                </slide>
+            </Carousel>
+<!-- :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="false" -->
+            <!-- <carousel >
+                <div id="carouselContent">
+                    <carousel-slide v-for="(el, index) in datas" :key="index" >
+                        <img :src="getImage(el.backdrop_path)" />
                         <div id="text-carousel">   
                             <div id="Carousel_titre">LASTEST <span>ON</span>LINE <span>MO</span>VIES</div>
                             <div id="Carousel_soustitre">IN SPACE NO ONE CAN HEAR YOU SCREAM</div>
-                            <router-link :to="slide.lien"> 
+                            <router-link :to="getId(el.id)"> 
                                 <button id="go-film" >GO TO THE FILM</button>
                             </router-link>
                         </div>
                     </carousel-slide>
                 </div>
-            </carousel>
+            </carousel> -->
         </div>
     </div>
 </template>
 
 <script>
-import carousel from './../carousel/carousel'
-import carouselSlide from './../carousel/carouselSlide'
-import { getSuggest } from '../../utils/getSuggest.js'
-
+import VueCarousel from 'vue-carousel'
+import { Carousel, Slide } from 'vue-carousel'
+// import carousel from './../carousel/carousel'
+// import carouselSlide from './../carousel/carouselSlide'
+import { axios } from './../../Plugins/Axios'
+import { getImage } from '../../utils/getImage'
+import { getId } from '../../utils/getId'
 
 export default {
     name: 'Tete',
@@ -56,58 +76,60 @@ export default {
             icon : true,
             bigScreen : false,
             windowWidth: window.innerWidth,
-            slides : [
-                    {
-                    source: "https://image.tmdb.org/t/p/original/6k3NNLq6HOZMniTb3etKxzITdP9.jpg",
-                    lien: "/InfosFilm/283995/"
-                },
-                {
-                    source: "https://image.tmdb.org/t/p/original/lvjscO8wmpEbIfOEZi92Je8Ktlg.jpg",
-                    lien: "/InfosFilm/450465/"
-                },
-                {
-                    source: "https://image.tmdb.org/t/p/original/skauHPLA4so9PqOuu3jhWmiWnFd.jpg",
-                    lien: "/InfosFilm/297802/"
-                },
-                {
-                    source: "https://image.tmdb.org/t/p/original/mWLljCmpqlcYQh7uh51BBMwCZwN.jpg",
-                    lien: "/InfosFilm/522681/"
-                },
-                {
-                    source: "https://image.tmdb.org/t/p/original/n2aX63BmW7zIKgKJ58e6rKlSsdi.jpg",
-                    lien: "/InfosFilm/157433/"
-                }
-                ] ,
+            datas: [],
         }
     },
     components: {
-        carousel,
-        carouselSlide,
+        Carousel,
+        Slide,
+        // carouselSlide,
     },
-
+    beforeMount(){
+        axios
+            .get(`https://api.themoviedb.org/3/trending/all/day?api_key=7ca673fff2a5fb82abd38a9a0d559c4e`)
+            .then(response => {
+                let random = []
+                for (let i = 0; i < 5 ; i++){
+                    let a = Math.floor(Math.random()*20);
+                    random[i] = a
+                }
+                for (let j = 0; j < random.length; j++){
+                    this.datas.push(response.data.results[random[j]])
+                }
+                console.log(this.datas)
+            })
+            .catch(error => {
+                this.errored = true
+            })
+            .finally(() => {
+                this.loading = false;
+            }) 
+    },
     mounted () {
         window.onresize = () => {
             this.windowWidth = window.innerWidth
             // console.log(this.windowWidth);
         }
     },
-
     methods: {
         menuClick(){
             this.icon = !this.icon
         },
-        getSuggest: Function,
+        getImage,
+        getId,
     }
 }
 </script>
 
 
 <style scoped>
+    .testSlide {
+        color: black;
+    }
     #header {
         width: 100vw;
         margin: 0;
         font-family: 'Alegreya Sans', sans-serif;
-
     }
     #nav {
         background-color: #262626;
@@ -136,7 +158,11 @@ export default {
         color: red;
     }
 
-    .carousel {
+    #Carou {
+        height: 500px;
+        overflow: hidden;
+    }
+    /* .carousel {
         position: relative;
         overflow: hidden;
         height: 400px;
@@ -162,14 +188,11 @@ export default {
 
     #carouselContent{
         display: flex;
-    }
-
-    img{
-        width: 100%;
-    }
+        width: 100vw;
+    } */
 
     #text-carousel {
-        margin-top: 122px;
+        margin-top: 230px;
         position: relative;
         right: 54vw;
         display: flex;
@@ -204,9 +227,7 @@ export default {
         height: 3em;
         width: 10em;
         margin-left: 40px; 
-        margin-top: 10px; 
-
-        /* margin: 10px; */
+        margin-top: 10px;
         border-radius: 5px;
         border: none;
         transition: 0.300s; 
@@ -219,12 +240,14 @@ export default {
         font-size: 0.8rem;
     }
 
-    .carousel__pagination {
+    /*.carousel__pagination {
         display: flex;
         justify-content: center;
+    } */
+
+    img {
+        width: 100%;
     }
-
-
     span {
         color: red;
     }
