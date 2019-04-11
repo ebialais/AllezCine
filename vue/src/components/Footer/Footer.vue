@@ -41,7 +41,7 @@
     #footer {
         margin: 0;
         background-color: black;
-        height: 350px;
+        height: 400px;
         color: white;
         width: 100vw;
         padding: 30px 0;

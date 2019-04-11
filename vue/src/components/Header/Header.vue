@@ -70,24 +70,24 @@ export default {
     },
     beforeMount(){
         axios
-            .get(`https://api.themoviedb.org/3/trending/all/day?api_key=7ca673fff2a5fb82abd38a9a0d559c4e`)
-            .then(response => {
-                let random = []
-                for (let i = 0; i < 5 ; i++){
-                    let a = Math.floor(Math.random()*20);
-                    random[i] = a
-                }
-                for (let j = 0; j < random.length; j++){
-                    this.datas.push(response.data.results[random[j]])
-                }
-                console.log(this.datas)
-            })
-            .catch(error => {
-                this.errored = true
-            })
-            .finally(() => {
-                this.loading = false;
-            }) 
+        .get(`https://api.themoviedb.org/3/trending/all/day?api_key=7ca673fff2a5fb82abd38a9a0d559c4e`)
+        .then(response => {
+            let random = []
+            for (let i = 0; i < 5 ; i++){
+                let a = Math.floor(Math.random()*20);
+                random[i] = a
+            }
+            for (let j = 0; j < random.length; j++){
+                this.datas.push(response.data.results[random[j]])
+            }
+            console.log(this.datas)
+        })
+        .catch(error => {
+            this.errored = true
+        })
+        .finally(() => {
+            this.loading = false;
+        }) 
     },
     mounted () {
         window.onresize = () => {
@@ -150,7 +150,7 @@ export default {
         float: right;
             margin: -2% 2%;
     }
-
+   
     #Carou {
         height: 500px;
         overflow: hidden;
@@ -222,6 +222,19 @@ export default {
         color: red;
     }
     @media only screen and (min-width: 500px) {
-        font-size: 1.2em;
+        nav {
+            font-size: 1.2em;
+        }
+        #text-carousel {
+        margin-top: 230px;
+        position: relative;
+        right: 54vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: center; 
+        align-content: center;
+    }
     }
 </style>
