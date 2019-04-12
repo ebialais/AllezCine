@@ -74,20 +74,24 @@ export default {
             left: -100px;
         }
     }
-    @media only screen and (min-width: 800px) {
-        #footer {
-            font-size: 14px;
-            line-height : 25px;
-            height: 350px;
-            width: 100vw;
+    @media only screen and (min-width: 700px) {
+        .face {
+            top: 600px;
+            left: -135px;
+            position: fixed;
+            height: 40px;
+            width: 180px;
+            background-position: right;
+            background-size: 20%;
         }
-        #liste {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-        }
-        img {
-        width: 200px;
+        .twit {
+            top: 650px;
+            left: -135px;
+            position: fixed;
+            height: 40px;
+            width: 180px;
+            background-position: right;
+            background-size: 20%;
         }
     }
 

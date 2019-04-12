@@ -30,7 +30,8 @@
                     :mouse-drag="false" 
                     :autoplay="true"
                     :loop="true"
-                    :paginationPosition="top">
+                    :paginationPosition="top"
+                    :centerMode="true">
                 <slide v-for="(el, index) in datas" :key="index">
                     <img :src="getImage(el.backdrop_path)" />
                     <div id="text-carousel">   
@@ -150,22 +151,20 @@ export default {
         float: right;
             margin: -2% 2%;
     }
-   
     #Carou {
         height: 500px;
         overflow: hidden;
     }
-    
     #text-carousel {
-        margin-top: 230px;
         position: relative;
-        right: 54vw;
+        top: -511px;
         display: flex;
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
         justify-content: center; 
         align-content: center;
+        min-width: 200px;
     }
 
     #Carousel_titre {
@@ -181,8 +180,8 @@ export default {
     #Carousel_soustitre{
         font-family: 'Alegreya Sans', sans-serif;
         font-size: 1em;
+        text-align: center;
         color: white;
-        margin-left: 70px; 
         margin-top: 8px; 
         width: 300px;
     }
@@ -221,20 +220,70 @@ export default {
     span {
         color: red;
     }
-    @media only screen and (min-width: 500px) {
+
+    @media only screen and (max-width: 900px) {
+        .VueCarousel-slide {
+            width: 100vw;   
+            margin-top: -20px;
+        }
         nav {
             font-size: 1.2em;
         }
         #text-carousel {
-        margin-top: 230px;
+        margin-top: 0;
         position: relative;
-        right: 54vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: nowrap;
-        justify-content: center; 
-        align-content: center;
+        top: -271px;
+        }
+        #Carousel_titre {
+            font-size: 1.5em;
+            margin-top: 30px; 
+            margin-left: 0; 
+        }
+
+        #Carousel_soustitre{
+            font-size: 0.7em;
+        }
+        #go-film {
+            height: 3em;
+            width: 8em;
+            margin-left: 0; 
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
     }
+    @media only screen and (max-width: 500px) {
+        .VueCarousel-slide {
+            width: 100vw;
+            margin-top: -20px;
+        }
+        nav {
+            font-size: 1.2em;
+            height: 30px;
+        }
+        #text-carousel {
+        margin-top: 0;
+        position: relative;
+        top: -180px;
+        font-size: 10px;
+        }
+        #Carousel_titre {
+            font-size: 1.3em;
+            color: white;
+            text-align: center;
+            width: 600px;
+            margin-top: 30px; 
+        }
+
+        #Carousel_soustitre{
+            display: none;
+        }
+        #go-film {
+            height: 3em;
+            width: 8em;
+            margin-left: 0; 
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
+    
     }
 </style>
