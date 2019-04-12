@@ -1,28 +1,29 @@
 <template>
     <div id="header">
-        <div id="nav" v-if="windowWidth > 500">
-            <div class="navigator">
-                <router-link to="/" class="link">HOME</router-link>
-                <router-link to="/topFilms" class="link">Films populaires</router-link>
-                <router-link to="/topSeries" class="link">Série TV</router-link>
-            </div>
+        <div id="nav" v-if="windowWidth > 500" class="navigator">
+            <router-link to="/" class="link">HOME</router-link>
+            <router-link to="/topFilms" class="link">Films populaires</router-link>
+            <router-link to="/topSeries" class="link">Série TV</router-link>
             <form>
                 <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value="" :getSuggest="getSuggest"/>
             </form>
         </div>
-        <div id="nav" v-else>
-            <div v-if="icon" >
+        <div id="nav"  v-else>
+            <div v-if="icon" class="navigator">
                 <i class="fas fa-bars" @click="menuClick"></i>
+                <form>
+                    <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
+                </form>
             </div>
             <div class="navigator" v-else>
                 <i class="fas fa-times" @click="menuClick"></i>
                 <router-link to="/" class="link"><i class="fas fa-home"></i></router-link>
                 <router-link to="/topFilms" class="link"><i class="fas fa-film"></i></router-link>
                 <router-link to="/topSeries" class="link"><i class="fas fa-tv"></i></router-link>
+                <form>
+                    <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
+                </form>
             </div>
-            <form>
-                <input id='wordInput' name="search" list='suggest' placeholder="Rechercher..." autocomplete="off" required type="text" value=""/>
-            </form>
         </div>
         <div id="Carou">
             <Carousel :per-page="1" 
@@ -120,11 +121,7 @@ export default {
     #nav {
         background-color: #262626;
         height: 50px;
-        width: 100%;
-        margin: 0;
-        padding-top: 2%;
         font-size: 1.3em;
-        display: block;
     }
     .fa-times, .fa-bars {
         color: white;
@@ -146,10 +143,11 @@ export default {
     #wordInput {
         border-radius: 20px;
         border: none;
-        width: 25%; 
-        padding: 0.5%;
+        width: 150px; 
+        height: 20px;
+        padding: 5px;
         float: right;
-            margin: -2% 2%;
+        margin: -2% 2%;
     }
     #Carou {
         height: 500px;
@@ -203,10 +201,6 @@ export default {
         width: 10.1em; 
         font-size: 0.8rem;
     }
-    /* .carousel__pagination {
-        display: flex;
-        justify-content: center;
-    } */
 
     .fa-home {
         margin-top: 5px; 
@@ -220,14 +214,17 @@ export default {
     span {
         color: red;
     }
+    .navigator {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+    }
 
     @media only screen and (max-width: 900px) {
         .VueCarousel-slide {
             width: 100vw;   
             margin-top: -20px;
-        }
-        nav {
-            font-size: 1.2em;
         }
         #text-carousel {
         margin-top: 0;
@@ -250,15 +247,17 @@ export default {
             margin-top: 10px;
             font-size: 0.8em;
         }
+        #wordInput {
+            width: 100px; 
+        }
+        #nav{
+            font-size: 1em;
+        }
     }
     @media only screen and (max-width: 500px) {
         .VueCarousel-slide {
             width: 100vw;
             margin-top: -20px;
-        }
-        nav {
-            font-size: 1.2em;
-            height: 30px;
         }
         #text-carousel {
         margin-top: 0;
@@ -283,6 +282,9 @@ export default {
             margin-left: 0; 
             margin-top: 10px;
             font-size: 0.8em;
+        }
+        .navigator{
+            padding-top: 5px;
         }
     
     }
