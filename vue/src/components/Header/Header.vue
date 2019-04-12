@@ -75,9 +75,10 @@ export default {
         .get(`https://api.themoviedb.org/3/trending/all/day?api_key=7ca673fff2a5fb82abd38a9a0d559c4e`)
         .then(response => {
             let random = []
-            for (let i = 0; i < 5 ; i++){
+            for (let i = 0; i<5 ; i++){
                 let a = Math.floor(Math.random()*20);
                 random[i] = a
+                console.log(random)
             }
             for (let j = 0; j < random.length; j++){
                 this.datas.push(response.data.results[random[j]])
