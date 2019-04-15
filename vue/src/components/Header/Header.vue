@@ -34,7 +34,7 @@
                     :paginationPosition="top"
                     :centerMode="true">
                 <slide v-for="(el, index) in datas" :key="index">
-                    <img :src="getImage(el.backdrop_path)" />
+                    <img :src="getImage2(el.backdrop_path)" />
                     <div id="text-carousel">   
                         <div id="Carousel_titre">LASTEST <span>ON</span>LINE <span>MO</span>VIES</div>
                         <div id="Carousel_soustitre">IN SPACE NO ONE CAN HEAR YOU SCREAM</div>
@@ -52,7 +52,7 @@
 import VueCarousel from 'vue-carousel'
 import { Carousel, Slide } from 'vue-carousel'
 import { axios } from './../../Plugins/Axios'
-import { getImage } from '../../utils/getImage'
+import { getImage2 } from '../../utils/getImage2'
 import { getId } from '../../utils/getId'
 import { getSuggest } from '../../utils/getSuggest.js'
 
@@ -102,7 +102,7 @@ export default {
         menuClick(){
             this.icon = !this.icon
         },
-        getImage,
+        getImage2,
         getId,
         getSuggest,
     }
