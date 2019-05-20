@@ -16,9 +16,9 @@ The project’s instructions are in a private repo by Becode/Lovelace3.9, so we 
 
 ## Visual
 
-![Laptop View](/assets/Screenshot  laptopView.png)
-![iPad View](/assets/Screenshot  iPadView.png)
-![iPhone View](/assets/Screenshot  iPhoneView.png)
+![Laptop View](vue/assets/Screenshot_laptopView.png)
+![iPad View](vue/assets/Screenshot_iPadView.png)
+![iPhone View](vue/assets/Screenshot_iPhoneView.png)
 
 ## Versioning
 We use Github Projects for versioning. For the versions available, see the tags on this repository.
