@@ -6,19 +6,24 @@ This is a new groups project based on the The Movie db’s site. The Movie Datab
 
 ## Getting Started
 
-The project’s instructions are in a private repo by Becode/Lovelace3.9, so we put here only the result asked (images).
-
-## Built With
-- Vue.js  The JavaScript framework used
-- PHP
-- MySQL  database
-- Visual Code Studio
+The project’s instructions are in a private repo by Becode/Lovelace3.9.
+Instructions : 
+- On all pages : photo carousel, header and footer
+- home page : 20 films and 20 Tv show
+- film page : films with infinite scroll
+- TV show page : tv shows with infinite scroll
 
 ## Visual
 
 ![Laptop View](vue/public/assets/Screenshot_laptopView.png)
 ![iPad View](vue/public/assets/Screenshot_iPadView.png)
 ![iPhone View](vue/public/assets/Screenshot_iPhoneView.png)
+
+## Built With
+- Vue.js  The JavaScript framework used
+- PHP
+- MySQL  database
+- Visual Code Studio
 
 ## Versioning
 We use Github Projects for versioning. For the versions available, see the tags on this repository.
