@@ -14,6 +14,12 @@ The project’s instructions are in a private repo by Becode/Lovelace3.9, so we 
 - MySQL  database
 - Visual Code Studio
 
+## Visual
+
+![Laptop View](/assets/Screenshot  laptopView.png)
+![iPad View](/assets/Screenshot  iPadView.png)
+![iPhone View](/assets/Screenshot  iPhoneView.png)
+
 ## Versioning
 We use Github Projects for versioning. For the versions available, see the tags on this repository.
 
