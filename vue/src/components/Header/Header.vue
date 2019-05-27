@@ -26,6 +26,7 @@
             </div>
         </div>
         <div id="Carou">
+            <img alt="logo Allez Ciné" src="assets/logoAllezCine.png" id="logoCarousel">
             <Carousel :per-page="1" 
                     :navigate-to="someLocalProperty" 
                     :mouse-drag="false" 
@@ -111,6 +112,13 @@ export default {
 
 
 <style scoped>
+    #logoCarousel {
+        width: 100px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1;
+    }
     .testSlide {
         color: black;
     }
