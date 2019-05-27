@@ -1,7 +1,7 @@
 <template>
     <div class="social">  
-        <a href="https://www.facebook.com" target="_blank" class="face"></a>     
-        <a href="https://twitter.com/" target="_blank" class="twit"></a>     
+        <a href="https://www.facebook.com" target="_blank" class="face"><img src="assets/face.png" class="socialIcon" /></a>     
+        <a href="https://twitter.com/" target="_blank" class="twit"><img src="assets/twitter.png" class="socialIcon" /></a>     
     </div>    
 </template>
 
@@ -12,6 +12,12 @@ export default {
 </script>
 
 <style scoped>
+    .socialIcon {
+        width : 40px;
+        float: right;
+        margin: 0;
+    }
+
     .social {
         position: sticky;
         top: 0;
@@ -25,10 +31,10 @@ export default {
         width: 40px;
         background: #4d71a8;
         border-radius: 22px;
-        background-image: url("../assets/face.png");
+        /* background-image: url("/assets/face.png");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 80%;
+        background-size: 80%; */
         transition: 0.5s;
     }
 
@@ -40,10 +46,10 @@ export default {
         width: 40px;
         background: #1eb7eb;
         border-radius: 22px;
-        background-image: url("../assets/twitter.png");
+        /* background-image: url("/assets/twitter.png");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 80%;
+        background-size: 80%; */
         transition: 0.5s;
     }
     @media only screen and (min-width: 400px) {
@@ -53,8 +59,8 @@ export default {
             position: fixed;
             height: 40px;
             width: 180px;
-            background-position: right;
-            background-size: 20%;
+            /* background-position: right;
+            background-size: 20%; */
         }
         .face:hover {
             left: -100px;
@@ -66,12 +72,12 @@ export default {
             position: fixed;
             height: 40px;
             width: 180px;
-            background-position: right;
-            background-size: 20%;
+            /* background-position: right;
+            background-size: 20%; */
         }
         .twit:hover {
-            top:520px;
             left: -100px;
+            position: fixed;
         }
     }
     @media only screen and (min-width: 700px) {
@@ -81,8 +87,8 @@ export default {
             position: fixed;
             height: 40px;
             width: 180px;
-            background-position: right;
-            background-size: 20%;
+            /* background-position: right;
+            background-size: 20%; */
         }
         .twit {
             top: 650px;
@@ -90,8 +96,8 @@ export default {
             position: fixed;
             height: 40px;
             width: 180px;
-            background-position: right;
-            background-size: 20%;
+            /* background-position: right;
+            background-size: 20%; */
         }
     }
 
