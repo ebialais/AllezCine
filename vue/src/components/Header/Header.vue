@@ -113,9 +113,10 @@ export default {
 
 <style scoped>
     #logoCarousel {
-        width: 100px;
+        width: 10vw;
+        min-width: 50px;
         position: absolute;
-        top: 50px;
+        top: 100px;
         left: 0;
         z-index: 1;
     }
@@ -231,6 +232,10 @@ export default {
     }
 
     @media only screen and (max-width: 900px) {
+        #logoCarousel {
+            position: absolute;
+            top: 70px;
+        }
         .VueCarousel-slide {
             width: 100vw;   
             margin-top: -20px;
@@ -264,6 +269,10 @@ export default {
         }
     }
     @media only screen and (max-width: 500px) {
+        #logoCarousel {
+            position: absolute;
+            top: 50px;
+        }
         .VueCarousel-slide {
             width: 100vw;
             margin-top: -20px;
