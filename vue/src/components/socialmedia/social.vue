@@ -25,7 +25,7 @@ export default {
         width: 40px;
         background: #4d71a8;
         border-radius: 22px;
-        background-image: url("assets/face.png");
+        background-image: url("./assets/face.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
@@ -38,9 +38,9 @@ export default {
         position: fixed;
         height: 40px;
         width: 40px;
-        background: #1eb7eb;;
+        background: #1eb7eb;
         border-radius: 22px;
-        background-image: url("assets/twitter.png");
+        background-image: url("./assets/twitter.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;
