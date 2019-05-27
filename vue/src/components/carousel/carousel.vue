@@ -2,7 +2,7 @@
   <div class="carousel">
     <slot></slot>
     <!-- <i class="far fa-angle-right" width="30px"></i> -->
-    <div class="logo"><img alt="logo Allez Ciné" src="/assets/logoAllezCine.png"></div>
+    <div class="logo"><img alt="logo Allez Ciné" src="assets/logoAllezCine.png"></div>
     
     <button class="carousel__nav carousel__next" @click.prevent="next"></button>
     <button class="carousel__nav carousel__prev" @click.prevent="prev"></button>
