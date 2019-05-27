@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <div class="logo"><img alt="logo Allez Ciné" src="assets/logoAllezCine.png"></div>
+        <div class="logo"><img alt="logo Allez Ciné" src="/assets/logoAllezCine.png"></div>
         <div id="liste">
             <div id="left">
                 <h3>FUNDAMENTALS</h3>
@@ -41,7 +41,7 @@
     #footer {
         margin: 0;
         background-color: black;
-        height: 350px;
+        height: 400px;
         color: white;
         width: 100vw;
         padding: 30px 0;

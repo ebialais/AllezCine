@@ -1,15 +1,20 @@
 <?php
     require './bddConnect.php';
     require './headerSetting.php';
-
-    if (isset($_GET['idFilm']) && isset($_GET['titleCom']) && isset($_GET['userCom'])){
-        $req = $pdo -> prepare ('INSERT INTO `userRate` (idFilm, commentTitre, comment) VALUES (:idFilm, :commentTitre, :comment)');
+  
+    if (isset($_GET['filmId']) && isset($_GET['title']) && isset($_GET['comment'])){
+        $req = $pdo -> prepare ('INSERT INTO `userRate` (idFilm, titleCom, userCom) VALUES (:idFilm, :titleCom, :userCom)');
         $req -> execute ([
-            ':idFilm' => htmlspecialchars($_GET['idFilm']),
-            ':commentTitre' => htmlspecialchars($_GET['titleCom']),
-            ':comment' => htmlspecialchars($_GET['userCom']),
+            ':idFilm' => htmlspecialchars($_GET['filmId']),
+            ':titleCom' => htmlspecialchars($_GET['title']),
+            ':userCom' => htmlspecialchars($_GET['comment']),
         ]);
+        if(!$req){
+            print json_encode($pdo->errorInfo());
+        }else{
+            print json_encode($_GET);  
+        }
+    }else{
+        print json_encode('{status: 403, message: "Cant get all params"}');     
     }
-    print json_encode($_GET);
-    
 ?>

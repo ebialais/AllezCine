@@ -6,19 +6,10 @@
         <section v-else>
             <mainTitle :mainTitle="'Le top des Series TV'" />
             <div id="Content">
-                <div v-for="(tv, index) in tvs1" :key="index">
-                    <div v-if="index < 40">
-                        <router-link :to="{ name: 'InfosTv', params: { id: tv.id } }" class="link">
-                            <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
-                        </router-link> 
-                    </div>
-                </div> 
-                <div v-for="(tv, index) in tvs2" :key="index">
-                    <div v-if="index < 40">
-                        <router-link :to="{ name: 'InfosTv', params: { id: tv.id } }" class="link">
-                            <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
-                        </router-link> 
-                    </div>
+                <div v-for="(tv, index) in tvs" :key="index">
+                    <router-link :to="{ name: 'InfosTv', params: { id: tv.id } }" class="link">
+                        <card :title="tv.name" :year="getYear(tv.first_air_date)" :source="getImage(tv.poster_path)" /> 
+                    </router-link> 
                 </div> 
             </div>
         </section>
@@ -38,8 +29,8 @@
         name: 'TopSeries',
         data (){
             return {
-                tvs1: null,
-                tvs2:null,
+                tvs: [],
+                page: 1,
                 loading: true,
                 errored: false,
             }
@@ -49,23 +40,14 @@
             card,
             Error,
         },
-        mounted () {
+        beforeMount () {
             axios
-            .get(`https://api.themoviedb.org/3/discover/tv?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=1`)
+            .get(`https://api.themoviedb.org/3/discover/tv?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=${this.page}`)
             .then(response => {
-                this.tvs1 = response.data && response.data.results ? response.data.results : [] 
-            })
-            .catch(error => {
-                console.log(error)
-                this.errored = true
-            })
-            .finally(() => {
-                this.loading = false;
-            })
-            axios
-            .get(`https://api.themoviedb.org/3/discover/tv?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=2`)
-            .then(response => {
-                this.tvs2 = response.data && response.data.results ? response.data.results : [] 
+                console.log(response.data.results)
+                for (var i=0; i < response.data.results.length; i++) {
+                    this.tvs.push(response.data.results[i])
+                }
             })
             .catch(error => {
                 console.log(error)
@@ -75,9 +57,34 @@
                 this.loading = false;
             })
         },
+        mounted(){
+            this.scroll(this.tvs)
+        },
         methods : {
             getImage,
             getYear,
+            scroll (tvs){
+                window.onscroll = () => {
+                let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+                if (bottomOfWindow) {
+                    this.page++
+                    axios
+                    .get(`https://api.themoviedb.org/3/discover/tv?&api_key=7ca673fff2a5fb82abd38a9a0d559c4e&page=${this.page}`)
+                    .then(response => {
+                        // console.log(this.tvs)
+                        for (var i=0; i < response.data.results.length; i++) {
+                            this.tvs.push(response.data.results[i])
+                        }
+                    })
+                    .catch(error => {
+                        this.errored = true
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                    })
+                    }
+                }
+            }
         }
     }
 </script>
@@ -90,9 +97,12 @@
     #Content {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .link{
         display: flex;
         width: fit-content;
+        text-decoration: none;
+        color:rgb(114, 113, 113);
     }
 </style>

@@ -22,7 +22,7 @@
                                 <card :title="el.title" :year="getYear(el.release_date)" :source="getImage(el.poster_path)" /> 
                             </router-link> 
                         </div>
-                    </div>  
+                    </div> 
                 </div>
                 
             </div>
@@ -93,7 +93,7 @@
                 this.loading = false;
             })
             const req = new XMLHttpRequest();
-            req.open('GET',`http://10.20.0.116:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
+            req.open('GET',`http://10.20.0.65:8888/Projet_allezcine/allezcine/php/getData.php?idFilm=${this.idFilm}`, false);
             req.send(null);
             if (req.status === 200 ){
                 this.comments = JSON.parse(req.response)
