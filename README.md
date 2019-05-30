@@ -35,7 +35,7 @@ We use Github Projects for versioning. For the versions available, see the tags
 
 | Emilie Bialais | Jussi Ccoyllo | Pierre-Louis Picard |
 | :---: |:---:| :---:|
-| [![Emilie](https://avatars2.githubusercontent.com/u/46483146?s=200&v=4)]| [![Jussi](https://avatars1.githubusercontent.com/u/46483286?s=200&v=4)] | [![Pierre](https://avatars0.githubusercontent.com/u/46487566?s=200&v=4)] |
+| ![Emilie](https://avatars2.githubusercontent.com/u/46483146?s=200&v=4)| [![Jussi](https://avatars1.githubusercontent.com/u/46483286?s=200&v=4)] | [![Pierre](https://avatars0.githubusercontent.com/u/46487566?s=200&v=4)] |
 | <a href="https://github.com/Ebialais" target="_blank">`github.com/Ebialais`</a> | <a href="https://github.com/JussiCcoyllo" target="_blank">`github.com/JussiCcoyllo`</a> | <a href="https://github.com/Pierre-louis242" target="_blank">`github.com/Pierre-louis242`</a> |
 
 ---
