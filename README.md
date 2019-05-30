@@ -25,6 +25,9 @@ Instructions :
 - MySQL  database
 - Visual Code Studio
 
+- Only the Front-end part was build and deployed on the GitHub page
+You can see the result : https://ebialais.github.io/allezcine/
+
 ## Versioning
 We use Github Projects for versioning. For the versions available, see the tags on this repository.
 
