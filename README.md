@@ -1,6 +1,6 @@
 # AllezCiné
 
-This is a new groups project based on the The Movie db’s site. The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by a community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched.
+At 3 months of training at Becode, this is a new groups project based on the The Movie db’s site. The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by a community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched.
 
 *Tags: films, movie, TV, community, popular…*
 
