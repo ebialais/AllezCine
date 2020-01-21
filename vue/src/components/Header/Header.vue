@@ -1,6 +1,6 @@
 <template>
     <div id="header">
-        <div id="nav" v-if="windowWidth > 500">
+        <div id="nav" v-if="windowWidth > 545">
             <div class="navigator">
                 <router-link to="/" class="link">HOME</router-link>
                 <router-link to="/topFilms" class="link">Films populaires</router-link>

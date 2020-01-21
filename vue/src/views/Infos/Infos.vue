@@ -19,7 +19,7 @@
         methods:{
             getData(){
                 const req = new XMLHttpRequest();
-                req.open('GET','http://10.20.0.163:8888/Projet_allezcine/allezcine/php/getData.php?idFilm', false);
+                req.open('GET','http://10.20.0.17:8888/Projet_allezcine/allezcine/php/getData.php?idFilm', false);
                 req.send(null);
                 if (req.status === 200 ){
                     this.lists = JSON.parse(req.response)

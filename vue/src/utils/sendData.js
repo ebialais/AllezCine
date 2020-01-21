@@ -1,4 +1,4 @@
-const url = 'http://10.20.0.65:8888/Projet_allezcine/allezcine/php/';
+const url = 'http://10.20.0.17:8888/Projet_allezcine/allezcine/php/';
 
 export function addComment (idFilm, titleCom, userCom) {
     const req = new XMLHttpRequest()
